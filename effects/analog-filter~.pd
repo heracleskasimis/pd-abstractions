@@ -1,4 +1,4 @@
-#N canvas 367 243 1186 711 10;
+#N canvas 367 271 1186 711 10;
 #X obj 379 638 outlet~;
 #X obj 802 626 *~;
 #X obj 788 236 / 127;
@@ -6,7 +6,7 @@
 #X obj 817 513 line~;
 #X text 786 198 RESONANCE;
 #X obj 106 164 hsl 128 15 0 127 0 1 \$0-analog-filter-fm-/+-s \$0-analog-filter-fm-/+-r
-FM-/+ 133 7 0 10 -245500 -1 -1 0 1;
+FM-/+ 133 7 0 10 -245500 -1 -1 9600 1;
 #X obj 517 102 / 127;
 #X text 515 57 CUTOFF;
 #X obj 802 649 delwrite~ \$0-q-feedback 1;
@@ -20,12 +20,12 @@ FM-/+ 133 7 0 10 -245500 -1 -1 0 1;
 #X obj 517 77 r \$0-analog-filter-cutoff-s;
 #X text 620 169 "ANALOG" FLUX;
 #X obj 106 134 hsl 128 15 0 127 0 1 \$0-analog-filter-cutoff-s \$0-analog-filter-cutoff-r
-CUTOFF 133 7 0 10 -262144 -1 -1 0 1;
+CUTOFF 133 7 0 10 -262144 -1 -1 8600 1;
 #X obj 788 213 r \$0-analog-filter-q-s;
 #X text 297 78 SIGNAL IN;
 #X text 725 86 FM CV IN;
 #X obj 106 149 hsl 128 15 0 127 0 1 \$0-analog-filter-q-s \$0-analog-filter-q-r
-Q 133 7 0 10 -262144 -1 -1 0 1;
+Q 133 7 0 10 -262144 -1 -1 5800 1;
 #X obj 735 107 inlet~;
 #X obj 735 129 *~ 5000;
 #X obj 735 190 *~;
@@ -74,8 +74,8 @@ Q 133 7 0 10 -262144 -1 -1 0 1;
 #X obj 817 466 * 4;
 #X obj 488 300 * 1.5;
 #X obj 105 109 cnv 5 5 5 empty empty IN 0 0 0 8 -262144 -66577 0;
-#X obj 172 109 cnv 5 5 5 empty empty CUTOFF 0 0 0 8 -262144 -96927
-0;
+#X obj 172 109 cnv 5 5 5 empty empty CUTOFF 0 0 0 8 -262144 -2406 0
+;
 #X obj 267 109 cnv 5 5 5 empty empty Q 0 0 0 8 -262144 -66577 0;
 #X obj 391 40 noise~;
 #X obj 391 62 *~ 0.1;
