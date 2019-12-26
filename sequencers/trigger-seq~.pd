@@ -1,4 +1,4 @@
-#N canvas 434 263 1280 663 10;
+#N canvas 493 208 1281 663 10;
 #X obj 103 127 cnv 5 5 5 empty empty TRIGGER 0 0 0 12 -262144 -66577
 0;
 #X obj 158 127 cnv 5 5 5 empty empty SEQ 0 0 0 12 -262144 -66577 0
@@ -37,9 +37,9 @@ empty 17 7 0 10 -262144 -1 -1 1 1;
 empty 17 7 0 10 -262144 -1 -1 0 1;
 #X obj 103 139 hradio 15 1 0 16 \$0-trigger-seq-gui-s \$0-trigger-seq-gui-r
 empty 0 -8 0 10 -262144 -226533 -1 0;
-#X obj 448 93 inlet~;
-#X obj 448 137 f;
-#X obj 479 138 + 1;
+#X obj 448 50 inlet~;
+#X obj 448 136 f;
+#X obj 500 176 + 1;
 #X obj 448 159 % 16;
 #X floatatom 448 181 5 0 0 0 - - -, f 5;
 #X obj 448 200 t f f;
@@ -81,12 +81,10 @@ empty 0 -8 0 10 -262144 -226533 -1 0;
 #X obj 830 488 r \$0-trigger-seq-s15-s;
 #X obj 860 463 spigot;
 #X obj 893 434 r \$0-trigger-seq-s16-s;
-#X obj 584 142 f;
-#X obj 584 61 r \$0-trigger-seq-sos!;
 #X obj 213 188 hradio 8 0 1 16 \$0-trigger-seq-num-of-steps-s \$0-trigger-seq-num-of-steps-r
-NUMBER-OF-STEPS 0 -8 0 10 -262144 -1 -1 9;
-#X obj 599 95 r \$0-trigger-seq-num-of-steps-s;
-#X obj 599 117 + 1;
+NUMBER-OF-STEPS 0 -8 0 10 -262144 -1 -1 15;
+#X obj 596 69 r \$0-trigger-seq-num-of-steps-s;
+#X obj 596 91 + 1;
 #X obj 103 186 bng 15 100 50 0 empty empty empty 17 7 0 10 -262144
 -226533 -1;
 #X obj 93 604 t b;
@@ -102,10 +100,7 @@ NUMBER-OF-STEPS 0 -8 0 10 -262144 -1 -1 9;
 -226533 -1;
 #X text 825 20 RESET INPUT;
 #X obj 840 439 t b b;
-#X obj 867 92 loadbang;
-#X obj 597 171 loadbang;
-#X msg 597 193 0;
-#X obj 448 115 threshold~ 0.9 0 0.9 0;
+#X obj 448 72 threshold~ 0.9 0 0.9 0;
 #X obj 828 255 canvasargs;
 #X obj 828 144 argspack \$0-trigger-seq-s1 \$1 \$0-trigger-seq-s2 \$2
 \$0-trigger-seq-s3 \$3 \$0-trigger-seq-s4 \$4 \$0-trigger-seq-s5 \$5
@@ -114,11 +109,11 @@ NUMBER-OF-STEPS 0 -8 0 10 -262144 -1 -1 9;
 \$11 \$0-trigger-seq-s12 \$12 \$0-trigger-seq-s13 \$13 \$0-trigger-seq-s14
 \$14 \$0-trigger-seq-s15 \$15 \$0-trigger-seq-s16 \$16 \$0-trigger-seq-num-of-steps
 \$17;
-#X connect 19 0 82 0;
-#X connect 20 0 21 0;
+#X connect 19 0 77 0;
 #X connect 20 0 22 0;
 #X connect 21 0 20 1;
 #X connect 22 0 23 0;
+#X connect 22 0 21 0;
 #X connect 23 0 24 0;
 #X connect 24 0 26 0;
 #X connect 24 1 25 0;
@@ -137,14 +132,14 @@ NUMBER-OF-STEPS 0 -8 0 10 -262144 -1 -1 9;
 #X connect 26 12 55 0;
 #X connect 26 13 57 0;
 #X connect 26 14 59 0;
-#X connect 26 15 78 0;
+#X connect 26 15 76 0;
 #X connect 27 0 31 0;
 #X connect 29 0 28 0;
 #X connect 30 0 34 1;
 #X connect 31 0 33 0;
 #X connect 32 0 31 1;
 #X connect 33 0 29 0;
-#X connect 33 0 69 0;
+#X connect 33 0 67 0;
 #X connect 34 0 33 0;
 #X connect 35 0 33 0;
 #X connect 36 0 35 1;
@@ -174,20 +169,15 @@ NUMBER-OF-STEPS 0 -8 0 10 -262144 -1 -1 9;
 #X connect 60 0 59 1;
 #X connect 61 0 33 0;
 #X connect 62 0 61 1;
-#X connect 63 0 22 1;
-#X connect 64 0 63 0;
-#X connect 66 0 67 0;
-#X connect 67 0 63 1;
-#X connect 69 0 68 0;
+#X connect 64 0 65 0;
+#X connect 65 0 22 1;
+#X connect 67 0 66 0;
+#X connect 70 0 71 0;
+#X connect 71 0 72 0;
 #X connect 72 0 73 0;
-#X connect 73 0 74 0;
-#X connect 74 0 75 0;
-#X connect 74 1 76 0;
-#X connect 75 0 20 1;
-#X connect 78 0 61 0;
-#X connect 79 0 75 0;
-#X connect 80 0 81 0;
-#X connect 81 0 20 1;
-#X connect 82 0 20 0;
-#X connect 84 0 83 0;
+#X connect 72 1 74 0;
+#X connect 73 0 20 1;
+#X connect 76 0 61 0;
+#X connect 77 0 20 0;
+#X connect 79 0 78 0;
 #X coords 0 -1 1 1 250 110 2 100 100;
