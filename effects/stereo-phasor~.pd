@@ -1,4 +1,4 @@
-#N canvas 579 324 1169 667 10;
+#N canvas 579 352 1169 667 10;
 #X obj 318 67 inlet~;
 #X obj 320 338 +~;
 #X obj 346 154 rzero_rev~;
@@ -13,7 +13,7 @@
 #X obj 453 91 expr~ abs ($v1-0.5);
 #X obj 453 113 expr~ 0.97 - 0.6*$v1*$v1;
 #X obj 320 508 outlet~;
-#X obj 106 128 hsl 128 15 0 127 0 1 \$0-phasor-phasor-s \$0-phasor-phasor-r
+#X obj 106 128 hsl 128 15 0 127 0 0 \$0-phasor-phasor-s \$0-phasor-phasor-r
 PHASOR 133 7 0 10 -262144 -1 -1 0 1;
 #X obj 123 490 mtof~;
 #X obj 641 392 inlet~;
@@ -57,7 +57,7 @@ PHASOR 133 7 0 10 -262144 -1 -1 0 1;
 #X obj 665 35 +~ 0.1;
 #X obj 249 167 cnv 5 5 5 empty empty RIGHT 0 0 0 8 -262144 -66577 0
 ;
-#X obj 106 143 hsl 128 15 0 127 0 1 \$0-phasor-cv-att-s \$0-phasor-cv-att-r
+#X obj 106 143 hsl 128 15 0 127 0 0 \$0-phasor-cv-att-s \$0-phasor-cv-att-r
 CV 133 7 0 10 -216373 -262144 -1 0 1;
 #X obj 215 259 / 127;
 #X obj 641 448 *~;
@@ -151,9 +151,10 @@ CV 133 7 0 10 -216373 -262144 -1 0 1;
 #X connect 4 0 0 0;
 #X connect 6 0 1 0;
 #X restore 765 164 pd parameter-nudging-system;
-#X obj 766 226 canvasargs;
-#X obj 766 191 argspack \$0-phasor-phasor \$1 \$0-phasor-cv-att \$2
+#X obj 765 257 canvasargs;
+#X obj 765 222 msgpack \$0-phasor-phasor \$1 \$0-phasor-cv-att \$2
 ;
+#X obj 765 193 loadbang;
 #X connect 0 0 23 0;
 #X connect 1 0 22 0;
 #X connect 2 0 3 0;
@@ -223,4 +224,5 @@ CV 133 7 0 10 -216373 -262144 -1 0 1;
 #X connect 56 0 57 0;
 #X connect 57 0 55 1;
 #X connect 61 0 60 0;
+#X connect 62 0 61 0;
 #X coords 0 -1 1 1 177 75 2 100 100;

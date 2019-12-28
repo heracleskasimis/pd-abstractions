@@ -1,15 +1,15 @@
-#N canvas 391 290 1115 698 10;
+#N canvas 391 346 1115 698 10;
 #X obj 443 43 inlet~;
 #X text 441 24 CLOCK IN;
 #X obj 443 109 f;
 #X obj 473 109 + 1;
-#X obj 147 152 vsl 15 96 0 127 0 1 \$0-8steps-s2-s \$0-8steps-s2-r
+#X obj 147 152 vsl 15 96 0 127 0 0 \$0-8steps-s2-s \$0-8steps-s2-r
 2 3 -9 0 10 -262144 -1 -1 1900 1;
-#X obj 132 152 vsl 15 96 0 127 0 1 \$0-8steps-s1-s \$0-8steps-s1-r
+#X obj 132 152 vsl 15 96 0 127 0 0 \$0-8steps-s1-s \$0-8steps-s1-r
 1 3 -9 0 10 -262144 -1 -1 2000 1;
-#X obj 177 152 vsl 15 96 0 127 0 1 \$0-8steps-s4-s \$0-8steps-s4-r
+#X obj 177 152 vsl 15 96 0 127 0 0 \$0-8steps-s4-s \$0-8steps-s4-r
 4 3 -9 0 10 -262144 -1 -1 1900 1;
-#X obj 162 152 vsl 15 96 0 127 0 1 \$0-8steps-s3-s \$0-8steps-s3-r
+#X obj 162 152 vsl 15 96 0 127 0 0 \$0-8steps-s3-s \$0-8steps-s3-r
 3 3 -9 0 10 -262144 -1 -1 1900 1;
 #X obj 443 153 t f f;
 #X obj 135 128 cnv 5 5 5 empty empty 8STEPS 0 0 0 12 -262144 -66577
@@ -104,13 +104,13 @@
 #X obj 278 120 bng 15 50 50 0 empty empty empty 17 7 0 10 -262144 -258113
 -1;
 #X obj 762 70 t b b;
-#X obj 207 152 vsl 15 96 0 127 0 1 \$0-8steps-s6-s \$0-8steps-s6-r
+#X obj 207 152 vsl 15 96 0 127 0 0 \$0-8steps-s6-s \$0-8steps-s6-r
 6 3 -9 0 10 -262144 -1 -1 2000 1;
-#X obj 192 152 vsl 15 96 0 127 0 1 \$0-8steps-s5-s \$0-8steps-s5-r
+#X obj 192 152 vsl 15 96 0 127 0 0 \$0-8steps-s5-s \$0-8steps-s5-r
 5 3 -9 0 10 -262144 -1 -1 1900 1;
-#X obj 237 152 vsl 15 96 0 127 0 1 \$0-8steps-s8-s \$0-8steps-s8-r
+#X obj 237 152 vsl 15 96 0 127 0 0 \$0-8steps-s8-s \$0-8steps-s8-r
 8 3 -9 0 10 -262144 -1 -1 4700 1;
-#X obj 222 152 vsl 15 96 0 127 0 1 \$0-8steps-s7-s \$0-8steps-s7-r
+#X obj 222 152 vsl 15 96 0 127 0 0 \$0-8steps-s7-s \$0-8steps-s7-r
 7 3 -9 0 10 -262144 -1 -1 3700 1;
 #X obj 443 131 % 8;
 #X obj 443 182 sel 0 1 2 3 4 5 6 7;
@@ -128,7 +128,7 @@
 #X obj 786 272 * 28;
 #X floatatom 374 328 5 0 0 0 - - -, f 5;
 #X obj 802 76 loadbang;
-#X obj 132 271 hsl 128 15 0 127 0 1 \$0-8steps-scale-s \$0-8steps-scale-r
+#X obj 132 271 hsl 128 15 0 127 0 0 \$0-8steps-scale-s \$0-8steps-scale-r
 SCALE 133 7 0 10 -262144 -1 -1 7200 1;
 #X obj 411 530 +~;
 #X obj 569 45 inlet~;
@@ -764,7 +764,7 @@ SCALE 133 7 0 10 -262144 -1 -1 7200 1;
 #X connect 32 0 33 0;
 #X connect 33 0 35 0;
 #X connect 34 0 32 0;
-#X restore 22 462 pd parameter-nudging-system;
+#X restore 19 462 pd parameter-nudging-system;
 #X obj 443 65 threshold~ 0.9 0 0.9 0;
 #X obj 533 475 spigot;
 #X floatatom 469 390 5 0 0 0 - - -, f 5;
@@ -773,10 +773,11 @@ SCALE 133 7 0 10 -262144 -1 -1 7200 1;
 #X obj 548 391 t f f;
 #X floatatom 533 497 5 0 0 0 - - -, f 5;
 #X floatatom 589 459 5 0 0 0 - - -, f 5;
-#X obj 19 597 canvasargs;
-#X obj 19 486 argspack \$0-8steps-s1 \$1 \$0-8steps-s2 \$2 \$0-8steps-s3
+#X obj 19 566 canvasargs;
+#X obj 19 514 msgpack \$0-8steps-s1 \$1 \$0-8steps-s2 \$2 \$0-8steps-s3
 \$3 \$0-8steps-s4 \$4 \$0-8steps-s5 \$5 \$0-8steps-s6 \$6 \$0-8steps-s7
 \$7 \$0-8steps-s8 \$8 \$0-8steps-scale \$9;
+#X obj 19 488 loadbang;
 #X connect 0 0 94 0;
 #X connect 2 0 39 0;
 #X connect 3 0 2 1;
@@ -875,4 +876,5 @@ SCALE 133 7 0 10 -262144 -1 -1 7200 1;
 #X connect 99 1 95 1;
 #X connect 99 1 101 0;
 #X connect 103 0 102 0;
+#X connect 104 0 103 0;
 #X coords 0 -1 1 1 200 200 2 100 100;

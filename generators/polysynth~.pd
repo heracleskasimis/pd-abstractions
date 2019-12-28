@@ -1,5 +1,5 @@
-#N canvas 79 228 1117 769 10;
-#X obj 108 146 hsl 128 15 0 127 0 1 \$0-polysaw-pitch-s \$0-polysaw-pitch-r
+#N canvas 79 256 1117 769 10;
+#X obj 108 146 hsl 128 15 0 127 0 0 \$0-polysaw-pitch-s \$0-polysaw-pitch-r
 PITCH 135 7 0 10 -262144 -1 -1 0 1;
 #X obj 320 467 pack f f f;
 #X obj 320 328 f;
@@ -10,13 +10,13 @@ PITCH 135 7 0 10 -262144 -1 -1 0 1;
 #X floatatom 377 417 5 0 0 0 - - -, f 5;
 #X obj 320 443 poly 4 1;
 #X obj 320 492 route 1 2 3 4;
-#X obj 108 161 hsl 128 15 0 127 0 1 \$0-polysaw-saw->pulse-s \$0-polysaw-saw->pulse-r
+#X obj 108 161 hsl 128 15 0 127 0 0 \$0-polysaw-saw->pulse-s \$0-polysaw-saw->pulse-r
 SAW->PULSE 135 7 0 10 -262144 -1 -1 6900 1;
-#X obj 108 196 hsl 128 15 1.27 127 1 1 \$0-polysaw-attack-s \$0-polysaw-attack-r
+#X obj 108 196 hsl 128 15 1.27 127 1 0 \$0-polysaw-attack-s \$0-polysaw-attack-r
 ATTACK 135 7 0 10 -262144 -1 -1 4500 1;
-#X obj 108 211 hsl 128 15 0 127 0 1 \$0-polysaw-hold-s \$0-polysaw-hold-r
+#X obj 108 211 hsl 128 15 0 127 0 0 \$0-polysaw-hold-s \$0-polysaw-hold-r
 HOLD 135 7 0 10 -262144 -1 -1 0 1;
-#X obj 108 225 hsl 128 15 0 127 0 1 \$0-polysaw-release-s \$0-polysaw-release-r
+#X obj 108 225 hsl 128 15 0 127 0 0 \$0-polysaw-release-s \$0-polysaw-release-r
 RELEASE 135 7 0 10 -262144 -1 -1 7350 1;
 #X obj 320 371 pack f f;
 #X obj 517 195 r \$0-polysaw-pitch-s;
@@ -33,7 +33,7 @@ RELEASE 135 7 0 10 -262144 -1 -1 7350 1;
 #X obj 677 585 catch~ \$0-polysaw-eg;
 #X obj 677 649 outlet~ EG OUT;
 #X obj 677 607 *~ 0.25;
-#X obj 108 176 hsl 128 15 0 127 0 1 \$0-polysaw-dtune-s \$0-polysaw-dtune-r
+#X obj 108 176 hsl 128 15 0 127 0 0 \$0-polysaw-dtune-s \$0-polysaw-dtune-r
 DTUNE 135 7 0 10 -262144 -1 -1 12700 1;
 #N canvas 224 22 962 575 voice2-ahr 0;
 #X obj 43 6 inlet;
@@ -806,10 +806,11 @@ DTUNE 135 7 0 10 -262144 -1 -1 12700 1;
 #X obj 320 674 *~ 0.33;
 #X obj 488 677 *~ 0.33;
 #X obj 488 640 *~ 0.5;
-#X obj 597 65 canvasargs;
-#X obj 597 14 argspack \$0-polysaw-pitch \$1 \$0-polysaw-saw->pulse
+#X obj 597 91 canvasargs;
+#X obj 597 40 msgpack \$0-polysaw-pitch \$1 \$0-polysaw-saw->pulse
 \$2 \$0-polysaw-dtune \$3 \$0-polysaw-attack \$4 \$0-polysaw-hold \$5
 \$0-polysaw-release \$6;
+#X obj 597 16 loadbang;
 #X connect 0 0 17 0;
 #X connect 1 0 9 0;
 #X connect 2 0 3 0;
@@ -859,4 +860,5 @@ DTUNE 135 7 0 10 -262144 -1 -1 12700 1;
 #X connect 49 0 47 0;
 #X connect 50 0 49 0;
 #X connect 52 0 51 0;
+#X connect 53 0 52 0;
 #X coords 0 -1 1 1 205 165 2 100 100;

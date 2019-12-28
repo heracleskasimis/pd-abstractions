@@ -1,4 +1,4 @@
-#N canvas 469 222 982 753 10;
+#N canvas 469 250 982 753 10;
 #X floatatom 424 236 0 0 0 0 - - -;
 #X obj 487 507 *~;
 #X obj 672 444 line~;
@@ -52,7 +52,7 @@
 #X msg 641 260 100;
 #X obj 781 392 loadbang;
 #X msg 781 414 0;
-#X obj 108 163 hsl 128 15 0 127 0 1 \$0-pitchshifter-dry/wet-s \$0-pitchshifter-dry/wet-r
+#X obj 108 163 hsl 128 15 0 127 0 0 \$0-pitchshifter-dry/wet-s \$0-pitchshifter-dry/wet-r
 DRY/WET 135 7 0 10 -262144 -1 -1 0 1;
 #X obj 324 69 r \$0-pitchshifter-pitch-/+-s;
 #X obj 324 123 +;
@@ -75,7 +75,7 @@ DRY/WET 135 7 0 10 -262144 -1 -1 0 1;
 #X obj 105 109 cnv 5 5 5 empty empty IN 0 0 0 8 -262144 -66577 0;
 #X obj 105 125 cnv 5 5 5 empty empty PITCHSHIFTER 0 0 0 12 -262144
 -66577 0;
-#X obj 108 148 hsl 128 15 0 127 0 1 \$0-pitchshifter-cv-att-s \$0-pitchshifter-cv-att-r
+#X obj 108 148 hsl 128 15 0 127 0 0 \$0-pitchshifter-cv-att-s \$0-pitchshifter-cv-att-r
 CV 135 7 0 10 -216373 -1 -1 0 1;
 #X obj 775 13 r \$0-pitchshifter-cv-att-s;
 #X obj 718 571 vd~ \$0-pitchshifter-INPUT;
@@ -83,7 +83,7 @@ CV 135 7 0 10 -216373 -1 -1 0 1;
 #X obj 775 35 / 127;
 #X obj 775 57 pack 0 50;
 #X obj 775 79 line~;
-#X obj 108 133 hsl 128 15 0 127 0 1 \$0-pitchshifter-pitch-/+-s \$0-pitchshifter-pitch-/+-r
+#X obj 108 133 hsl 128 15 0 127 0 0 \$0-pitchshifter-pitch-/+-s \$0-pitchshifter-pitch-/+-r
 PITCH-/+ 135 7 0 10 -262144 -1 -1 0 1;
 #X obj 49 435 r \$0-pitchshifter-dry/wet-s;
 #X obj 424 637 *~;
@@ -222,13 +222,14 @@ PITCH-/+ 135 7 0 10 -262144 -1 -1 0 1;
 #X connect 6 0 0 0;
 #X connect 8 0 1 0;
 #X connect 10 0 2 0;
-#X restore 49 293 pd parameter-nudging-system;
+#X restore 49 261 pd parameter-nudging-system;
 #X obj 252 195 * 48;
 #X obj 252 217 - 24;
 #X obj 252 239 i;
-#X obj 50 321 argspack \$0-pitchshifter-pitch-/+ \$1 \$0-pitchshifter-cv-att
+#X obj 50 321 msgpack \$0-pitchshifter-pitch-/+ \$1 \$0-pitchshifter-cv-att
 \$2 \$0-pitchshifter-dry/wet \$3;
 #X obj 50 359 canvasargs;
+#X obj 50 294 loadbang;
 #X connect 0 0 29 0;
 #X connect 1 0 12 0;
 #X connect 2 0 1 1;
@@ -321,4 +322,5 @@ PITCH-/+ 135 7 0 10 -262144 -1 -1 0 1;
 #X connect 94 0 95 0;
 #X connect 95 0 69 0;
 #X connect 96 0 97 0;
+#X connect 98 0 96 0;
 #X coords 0 -1 1 1 200 85 2 100 100;

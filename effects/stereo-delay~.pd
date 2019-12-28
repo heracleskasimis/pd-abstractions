@@ -1,14 +1,14 @@
-#N canvas 332 216 1130 696 10;
+#N canvas 332 244 1130 696 10;
 #X obj 106 128 hsl 128 15 0 127 0 0 \$0-stereo-delay-rate-left-s \$0-stereo-delay-rate-left-r
-RATE-LEFT 133 7 0 10 -262144 -1 -1 5800 1;
+RATE-LEFT 133 7 0 10 -262144 -1 -1 0 1;
 #X obj 106 158 hsl 128 15 0 127 0 0 \$0-stereo-delay-feedback-s \$0-stereo-delay-feedback-r
-FEEDBACK 133 7 0 10 -262144 -1 -1 7500 1;
+FEEDBACK 133 7 0 10 -262144 -1 -1 0 1;
 #X obj 438 16 inlet~;
 #X obj 438 506 *~ -1;
 #X obj 81 486 *~;
 #X obj 438 482 *~;
 #X obj 106 187 hsl 128 15 0 127 0 0 \$0-stereo-delay-dry/wet-s \$0-stereo-delay-dry/wet-r
-DRY/WET 133 7 0 10 -262144 -1 -1 3900 1;
+DRY/WET 133 7 0 10 -262144 -1 -1 0 1;
 #X obj 96 276 t f f;
 #X msg 96 298 127 \$1;
 #X obj 96 320 -;
@@ -81,7 +81,7 @@ DRY/WET 133 7 0 10 -262144 -1 -1 3900 1;
 #X connect 27 0 15 0;
 #X restore 438 179 pd delay1;
 #X obj 106 143 hsl 128 15 0 127 0 0 \$0-stereo-delay-rate-right-s \$0-stereo-delay-rate-right-r
-RATE-RIGHT 133 7 0 10 -262144 -1 -1 4700 1;
+RATE-RIGHT 133 7 0 10 -262144 -1 -1 0 1;
 #X obj 562 504 *~ -1;
 #X obj 562 482 *~;
 #X obj 563 532 min~ 1;
@@ -100,7 +100,7 @@ RATE-RIGHT 133 7 0 10 -262144 -1 -1 4700 1;
 #X obj 562 430 lop~;
 #X obj 562 452 lop~;
 #X obj 106 172 hsl 128 15 0 127 0 0 \$0-stereo-delay-lowpass-s \$0-stereo-delay-lowpass-r
-LOWPASS 133 7 0 10 -262144 -1 -1 9300 1;
+LOWPASS 133 7 0 10 -262144 -1 -1 0 1;
 #X obj 803 288 / 127;
 #X obj 803 337 * 4950;
 #X obj 803 359 + 50;
@@ -387,11 +387,12 @@ LOWPASS 133 7 0 10 -262144 -1 -1 9300 1;
 #X connect 14 0 2 0;
 #X connect 16 0 3 0;
 #X connect 18 0 4 0;
-#X restore 748 33 pd parameter-nudging-system;
+#X restore 748 10 pd parameter-nudging-system;
 #X obj 748 115 canvasargs;
-#X obj 748 64 argspack \$0-stereo-delay-rate-left \$1 \$0-stereo-delay-rate-right
+#X obj 748 64 msgpack \$0-stereo-delay-rate-left \$1 \$0-stereo-delay-rate-right
 \$2 \$0-stereo-delay-feedback \$3 \$0-stereo-delay-lowpass \$4 \$0-stereo-delay-dry/wet
 \$5;
+#X obj 748 38 loadbang;
 #X connect 2 0 23 0;
 #X connect 2 0 4 0;
 #X connect 2 0 55 0;
@@ -449,4 +450,5 @@ LOWPASS 133 7 0 10 -262144 -1 -1 9300 1;
 #X connect 63 0 55 4;
 #X connect 63 0 23 4;
 #X connect 66 0 65 0;
+#X connect 67 0 66 0;
 #X coords 0 -1 1 1 200 120 2 100 100;

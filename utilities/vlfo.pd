@@ -1,4 +1,4 @@
-#N canvas 132 250 514 476 10;
+#N canvas 132 278 514 476 10;
 #X obj 276 324 sin;
 #X obj 276 238 f 0;
 #X obj 213 100 inlet;
@@ -14,11 +14,12 @@
 #X obj 276 295 / 100;
 #X obj 157 188 metro 10;
 #X obj 202 136 min 10;
+#X obj 292 141 expr $f1 * 50 + 50;
 #X connect 0 0 4 0;
 #X connect 1 0 5 0;
 #X connect 1 0 9 0;
 #X connect 2 0 14 0;
-#X connect 3 0 11 0;
+#X connect 3 0 15 0;
 #X connect 5 0 12 0;
 #X connect 6 0 8 0;
 #X connect 7 0 14 0;
@@ -30,3 +31,4 @@
 #X connect 12 0 0 0;
 #X connect 13 0 1 0;
 #X connect 14 0 10 0;
+#X connect 15 0 11 0;

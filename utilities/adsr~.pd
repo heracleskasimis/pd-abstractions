@@ -1,9 +1,9 @@
-#N canvas 396 253 1175 775 10;
+#N canvas 396 282 1175 775 10;
 #X obj 609 152 snapshot~;
 #X obj 678 117 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 609 402 f;
-#X obj 108 129 hsl 128 15 1.27 127 1 1 \$0-adsr-attack-s \$0-adsr-attack-r
+#X obj 108 129 hsl 128 15 1.27 127 1 0 \$0-adsr-attack-s \$0-adsr-attack-r
 ATTACK 135 7 0 10 -262144 -1 -1 9500 1;
 #X obj 652 297 * 0.00787402;
 #X obj 652 319 * 1990;
@@ -11,21 +11,21 @@ ATTACK 135 7 0 10 -262144 -1 -1 9500 1;
 #X obj 652 363 +;
 #X obj 652 385 clip 10 2000;
 #X obj 609 530 vline~;
-#X obj 108 174 hsl 128 15 1.27 127 1 1 \$0-adsr-release-s \$0-adsr-release-r
+#X obj 108 174 hsl 128 15 1.27 127 1 0 \$0-adsr-release-s \$0-adsr-release-r
 RELEASE 135 7 0 10 -262144 -1 -1 8700 1;
 #X obj 1013 352 * 0.00787402;
 #X obj 1013 396 + 10;
 #X obj 1013 418 +;
 #X msg 609 446 1 \$1 \, \$3 \$2 \$1;
 #X obj 609 424 pack f f f;
-#X obj 108 144 hsl 128 15 1.27 127 1 1 \$0-adsr-decay-s \$0-adsr-decay-r
+#X obj 108 144 hsl 128 15 1.27 127 1 0 \$0-adsr-decay-s \$0-adsr-decay-r
 DECAY 135 7 0 10 -262144 -1 -1 0 1;
 #X obj 751 319 * 0.00787402;
 #X obj 751 341 * 1990;
 #X obj 751 363 + 10;
 #X obj 751 385 +;
 #X obj 751 407 clip 10 2000;
-#X obj 108 159 hsl 128 15 0 127 0 1 \$0-adsr-sustain-s \$0-adsr-sustain-r
+#X obj 108 159 hsl 128 15 0 127 0 0 \$0-adsr-sustain-s \$0-adsr-sustain-r
 SUSTAIN 135 7 0 10 -262144 -1 -1 12700 1;
 #X obj 874 319 * 0.00787402;
 #X obj 874 385 +;
@@ -42,7 +42,7 @@ SUSTAIN 135 7 0 10 -262144 -1 -1 12700 1;
 #X obj 609 566 *~;
 #X obj 610 628 *~;
 #X obj 336 501 * 0.00787402;
-#X obj 108 189 hsl 128 15 0 127 0 1 \$0-adsr-curve-s \$0-adsr-curve-r
+#X obj 108 189 hsl 128 15 0 127 0 0 \$0-adsr-curve-s \$0-adsr-curve-r
 CURVE 135 7 0 10 -262144 -1 -1 0 1;
 #X obj 874 363 + 0.1;
 #X obj 874 341 * 0.8;
@@ -289,10 +289,11 @@ CURVE 135 7 0 10 -262144 -1 -1 0 1;
 #X restore 96 253 pd parameter-nudging-system;
 #X obj 609 300 t b b;
 #X msg 624 339 0 1;
-#X obj 97 316 canvasargs;
-#X obj 97 278 argspack \$0-adsr-attack \$1 \$0-adsr-decay \$2 \$0-adsr-sustain
+#X obj 97 349 canvasargs;
+#X obj 97 311 msgpack \$0-adsr-attack \$1 \$0-adsr-decay \$2 \$0-adsr-sustain
 \$3 \$0-adsr-release \$4 \$0-adsr-curve \$5;
 #X msg 998 512 0 \$1 1;
+#X obj 97 284 loadbang;
 #X connect 0 0 32 0;
 #X connect 1 0 41 0;
 #X connect 2 0 15 0;
@@ -365,4 +366,5 @@ CURVE 135 7 0 10 -262144 -1 -1 0 1;
 #X connect 72 0 9 0;
 #X connect 74 0 73 0;
 #X connect 75 0 9 0;
+#X connect 76 0 74 0;
 #X coords 0 -1 1 1 200 110 2 100 100;

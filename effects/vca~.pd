@@ -1,4 +1,4 @@
-#N canvas 501 335 918 527 10;
+#N canvas 501 391 918 527 10;
 #X obj 305 281 *~;
 #X obj 305 343 outlet~;
 #X obj 320 211 pack 0 50;
@@ -6,9 +6,9 @@
 #X obj 320 256 +~;
 #X text 301 39 SIGNAL IN;
 #X text 437 94 CV IN, f 7;
-#X obj 110 144 hsl 128 15 0 127 0 1 \$0-vca-cv-att-s \$0-vca-cv-att-r
+#X obj 110 144 hsl 128 15 0 127 0 0 \$0-vca-cv-att-s \$0-vca-cv-att-r
 CV 133 7 0 10 -216373 -1 -1 0 1;
-#X obj 110 129 hsl 128 15 0 127 0 1 \$0-vca-vca-s \$0-vca-vca-r VCA
+#X obj 110 129 hsl 128 15 0 127 0 0 \$0-vca-vca-s \$0-vca-vca-r VCA
 133 7 0 10 -262144 -1 -1 0 1;
 #X obj 108 122 cnv 5 5 5 empty empty VCA 0 0 0 12 -262144 -66577 0
 ;
@@ -106,9 +106,10 @@ CV 133 7 0 10 -216373 -1 -1 0 1;
 #X connect 3 0 7 0;
 #X connect 4 0 0 0;
 #X connect 6 0 1 0;
-#X restore 39 261 pd parameter-nudging-system;
-#X obj 38 287 argspack \$0-vca-vca \$1 \$0-vca-cv-att \$2;
-#X obj 38 312 canvasargs;
+#X restore 38 227 pd parameter-nudging-system;
+#X obj 38 279 msgpack \$0-vca-vca \$1 \$0-vca-cv-att \$2;
+#X obj 38 304 canvasargs;
+#X obj 38 253 loadbang;
 #X connect 0 0 1 0;
 #X connect 2 0 3 0;
 #X connect 3 0 4 0;
@@ -123,4 +124,5 @@ CV 133 7 0 10 -216373 -1 -1 0 1;
 #X connect 17 0 2 0;
 #X connect 18 0 0 0;
 #X connect 20 0 21 0;
+#X connect 22 0 20 0;
 #X coords 0 -1 1 1 165 65 2 100 100;

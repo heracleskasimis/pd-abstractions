@@ -1,5 +1,5 @@
-#N canvas 423 145 1292 809 10;
-#X obj 109 202 hsl 128 15 0 127 0 1 \$0-triad-attack-s \$0-triad-attack-r
+#N canvas 423 173 1292 809 10;
+#X obj 109 202 hsl 128 15 0 127 0 0 \$0-triad-attack-s \$0-triad-attack-r
 ATTACK 135 7 0 10 -262144 -1 -1 3400 1;
 #X obj 330 19 r \$0-triad-root-s;
 #X obj 330 327 tabosc4~ \$0-saw;
@@ -198,7 +198,7 @@ ATTACK 135 7 0 10 -262144 -1 -1 3400 1;
 #X connect 18 0 0 0;
 #X connect 19 0 0 0;
 #X restore 257 488 pd choose-scale;
-#X obj 109 250 hsl 128 15 0 127 0 1 \$0-triad-scale-s \$0-triad-scale-r
+#X obj 109 250 hsl 128 15 0 127 0 0 \$0-triad-scale-s \$0-triad-scale-r
 SCALE 133 7 0 10 -262144 -1 -1 3350 1;
 #X obj 257 440 t f f;
 #N canvas 120 22 1142 609 choose-scale 0;
@@ -315,7 +315,7 @@ SCALE 133 7 0 10 -262144 -1 -1 3350 1;
 #X obj 330 293 mtof~;
 #X obj 411 44 inlet~ ROOT CV;
 #X obj 330 41 * 0.00787402;
-#X obj 109 132 hsl 128 15 0 127 0 1 \$0-triad-root-s \$0-triad-root-r
+#X obj 109 132 hsl 128 15 0 127 0 0 \$0-triad-root-s \$0-triad-root-r
 ROOT 135 7 0 10 -262144 -1 -1 6250 1;
 #X obj 504 297 mtof~;
 #X obj 505 47 * 0.00787402;
@@ -326,7 +326,7 @@ ROOT 135 7 0 10 -262144 -1 -1 6250 1;
 #X obj 702 288 mtof~;
 #X obj 702 41 * 0.00787402;
 #X obj 778 62 inlet~ INTERVAL2;
-#X obj 109 147 hsl 128 15 0 127 0 1 \$0-triad-interval1-s \$0-triad-interval1-r
+#X obj 109 147 hsl 128 15 0 127 0 0 \$0-triad-interval1-s \$0-triad-interval1-r
 INT1 135 7 0 10 -262144 -1 -1 4400 1;
 #X obj 702 11 r \$0-triad-interval2-s;
 #X obj 505 531 *~;
@@ -344,9 +344,9 @@ INT1 135 7 0 10 -262144 -1 -1 4400 1;
 #X obj 95 448 t b;
 #X obj 79 517 s \$0-triad-eg3!;
 #X obj 95 471 s \$0-triad-eg4!;
-#X obj 109 162 hsl 128 15 0 127 0 1 \$0-triad-interval2-s \$0-triad-interval2-r
+#X obj 109 162 hsl 128 15 0 127 0 0 \$0-triad-interval2-s \$0-triad-interval2-r
 INT2 135 7 0 10 -262144 -1 -1 7650 1;
-#X obj 109 265 hsl 128 15 0 127 0 1 \$0-triad-xpose-s \$0-triad-xpose-r
+#X obj 109 265 hsl 128 15 0 127 0 0 \$0-triad-xpose-s \$0-triad-xpose-r
 XPOSE 135 7 0 10 -245500 -1 -1 0 1;
 #X floatatom 149 416 5 0 0 0 - - -, f 5;
 #N canvas 321 22 774 648 eg2 0;
@@ -414,7 +414,7 @@ XPOSE 135 7 0 10 -245500 -1 -1 0 1;
 1;
 #X obj 247 21 loadbang;
 #X obj 109 177 hsl 128 15 0 127 0 0 \$0-triad-dtune-s \$0-triad-dtune-r
-DTUNE 135 7 0 10 -262144 -1 -1 12700 1;
+DTUNE 135 7 0 10 -262144 -1 -1 0 1;
 #N canvas 321 22 774 648 eg1 0;
 #X obj 316 420 vline~;
 #X obj 507 111 r \$0-triad-release-s;
@@ -461,7 +461,7 @@ DTUNE 135 7 0 10 -262144 -1 -1 12700 1;
 ;
 #X obj 264 108 cnv 5 5 5 empty empty XPOSE 0 0 0 8 -262144 -66577 0
 ;
-#X obj 109 217 hsl 128 15 1.27 127 1 1 \$0-triad-release-s \$0-triad-release-r
+#X obj 109 217 hsl 128 15 1.27 127 1 0 \$0-triad-release-s \$0-triad-release-r
 RELEASE 135 7 0 10 -262144 -1 -1 7300 1;
 #X obj 291 557 r \$0-triad-xpose-s;
 #X floatatom 109 281 5 0 0 0 - - -, f 5;
@@ -825,9 +825,10 @@ SAW 48 8 0 10 -262144 -1 -1 0;
 #X connect 26 0 12 0;
 #X restore 900 149 pd parameter-nudging-system;
 #X obj 900 120 canvasargs;
-#X obj 900 59 argspack \$0-triad-root \$1 \$0-triad-interval1 \$2 \$0-triad-interval2
+#X obj 900 59 msgpack \$0-triad-root \$1 \$0-triad-interval1 \$2 \$0-triad-interval2
 \$3 \$0-triad-dtune \$4 \$0-triad-attack \$5 \$0-triad-release \$6
 \$0-triad-scale \$7 \$0-triad-xpose \$8 \$0-triad-selctor \$8;
+#X obj 900 35 loadbang;
 #X connect 1 0 14 0;
 #X connect 2 0 4 0;
 #X connect 3 0 4 0;
@@ -980,4 +981,5 @@ SAW 48 8 0 10 -262144 -1 -1 0;
 #X connect 144 0 59 0;
 #X connect 144 0 113 0;
 #X connect 147 0 146 0;
+#X connect 148 0 147 0;
 #X coords 0 -1 1 1 192 215 2 100 100;

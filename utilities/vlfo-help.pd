@@ -1,7 +1,7 @@
-#N canvas 0 22 563 535 10;
+#N canvas 678 303 564 535 10;
 #X obj 131 252 tabwrite~ view;
 #X obj 131 232 sig~;
-#X floatatom 128 41 5 0 0 0 - #0-lfospeed -;
+#X floatatom 128 41 5 0 10 0 - #0-lfospeed -, f 5;
 #X text 172 38 lfo speed (hz);
 #X obj 372 437 s \$0-lfospeed;
 #X msg 372 413 1;
@@ -14,8 +14,8 @@
 #X obj 207 184 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
 -1;
 #X text 226 185 draw graph;
-#N canvas 0 22 450 300 graph1 0;
-#X array view 44100 float 0;
+#N canvas 0 22 450 300 (subpatch) 0;
+#X array view 44100 float 0 black black;
 #X coords 0 1 44099 -1 200 140 1;
 #X restore 129 307 graph;
 #X connect 1 0 0 0;

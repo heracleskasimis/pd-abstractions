@@ -1,0 +1,41 @@
+#N canvas 557 355 553 374 10;
+#X obj 0 4 cnv 15 552 40 empty \$0-pddp.cnv.header msgpack 3 12 0 18
+-204280 -1 0;
+#X obj 497 14 msgpack;
+#X text 11 28 combine several sent messages into a single message;
+#X obj -1 235 cnv 3 550 3 empty \$0-pddp.cnv.outlets outlets 8 12 0
+13 -228856 -1 0;
+#X obj -1 277 cnv 3 550 3 empty \$0-pddp.cnv.argument arguments 8 12
+0 13 -228856 -1 0;
+#X obj 77 244 cnv 17 3 17 empty \$0-pddp.cnv.let.0 0 5 9 0 16 -228856
+-162280 0;
+#X text 97 243 list;
+#X text 79 295 n) symbol atom;
+#X obj 421 148 print;
+#X floatatom 29 105 5 0 0 0 - - -, f 5;
+#X floatatom 137 104 5 0 0 0 - - -, f 5;
+#X obj 29 129 send aa-s;
+#X obj 137 128 send bb-s;
+#X obj 421 123 msgpack aa 2 bb 4;
+#X obj -1 191 cnv 3 550 3 empty \$0-pddp.cnv.inlets inlets 8 12 0 13
+-228856 -1 0;
+#X obj 77 200 cnv 17 3 17 empty \$0-pddp.cnv.let.0 0 5 9 0 16 -228856
+-162280 0;
+#X text 97 198 bang;
+#X text 167 295 - arguments specify the send/receive names and the
+initial values.;
+#X text 167 243 - [msgpack will output its package (i.e. the list of
+values) when it receives a message.;
+#X text 167 198 - sends all currently stored values;
+#X obj 421 101 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 421 76 loadbang;
+#X obj 29 76 receive aa-r;
+#X obj 137 77 receive bb-r;
+#X connect 9 0 11 0;
+#X connect 10 0 12 0;
+#X connect 13 0 8 0;
+#X connect 20 0 13 0;
+#X connect 21 0 20 0;
+#X connect 22 0 9 0;
+#X connect 23 0 10 0;

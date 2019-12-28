@@ -1,11 +1,11 @@
-#N canvas 583 221 1131 665 10;
+#N canvas 583 249 1131 665 10;
 #X obj 294 266 inlet~;
 #X obj 294 303 vcf~ 1;
 #X obj 294 364 vcf~ 1;
 #X obj 294 434 vcf~ 1;
 #X obj 294 499 vcf~ 1;
 #X obj 294 621 outlet~;
-#X obj 106 120 hsl 128 15 1.27 127 1 1 \$0-bandpass-cutoff-s \$0-bandpass-cutoff-r
+#X obj 106 120 hsl 128 15 1.27 127 1 0 \$0-bandpass-cutoff-s \$0-bandpass-cutoff-r
 CUTOFF 133 7 0 10 -262144 -1 -1 0 1;
 #X obj 105 109 cnv 5 5 5 empty empty IN 0 0 0 8 -262144 -66577 0;
 #X obj 541 281 +~;
@@ -13,7 +13,7 @@ CUTOFF 133 7 0 10 -262144 -1 -1 0 1;
 #X obj 541 236 sig~;
 #X obj 541 258 lop~ 10;
 #X obj 541 207 + 100;
-#X obj 106 135 hsl 128 15 1.27 127 1 1 \$0-bandpass-res-s \$0-bandpass-res-r
+#X obj 106 135 hsl 128 15 1.27 127 1 0 \$0-bandpass-res-s \$0-bandpass-res-r
 RES. 133 7 0 10 -262144 -1 -1 0 1;
 #X obj 120 265 / 127;
 #X obj 120 287 * 9;
@@ -25,7 +25,7 @@ RES. 133 7 0 10 -262144 -1 -1 0 1;
 #X obj 715 207 inlet~;
 #X obj 715 229 *~ 5000;
 #X obj 541 185 * 5000;
-#X obj 106 165 hsl 128 15 0 127 0 1 \$0-bandpass-fm-/+-s \$0-bandpass-fm-/+-r
+#X obj 106 165 hsl 128 15 0 127 0 0 \$0-bandpass-fm-/+-s \$0-bandpass-fm-/+-r
 FM-/+ 133 7 0 10 -245500 -1 -1 0 1;
 #X obj 783 137 / 127;
 #X obj 783 159 * 2;
@@ -43,7 +43,7 @@ FM-/+ 133 7 0 10 -245500 -1 -1 0 1;
 #X obj 121 112 cnv 5 5 5 empty empty BANDPASS 0 0 0 12 -262144 -66577
 0;
 #X obj 374 253 t f f f f;
-#X obj 106 150 hsl 128 15 1.27 127 1 1 \$0-bandpass-drive-s \$0-bandpass-drive-r
+#X obj 106 150 hsl 128 15 1.27 127 1 0 \$0-bandpass-drive-s \$0-bandpass-drive-r
 DRIVE 133 7 0 10 -262144 -1 -1 0 1;
 #X obj 228 437 / 127;
 #X obj 228 459 * 3;
@@ -52,8 +52,9 @@ DRIVE 133 7 0 10 -262144 -1 -1 0 1;
 #X obj 228 525 line~;
 #X obj 294 542 *~;
 #X obj 570 414 canvasargs;
-#X obj 570 376 argspack \$0-bandpass-cutoff \$1 \$0-bandpass-res \$2
+#X obj 570 376 msgpack \$0-bandpass-cutoff \$1 \$0-bandpass-res \$2
 \$0-bandpass-drive \$3 \$0-bandpass-fm-/+ \$4;
+#X obj 570 347 loadbang;
 #X connect 0 0 1 0;
 #X connect 1 0 2 0;
 #X connect 2 0 3 0;
@@ -100,4 +101,5 @@ DRIVE 133 7 0 10 -262144 -1 -1 0 1;
 #X connect 43 0 44 1;
 #X connect 44 0 19 0;
 #X connect 46 0 45 0;
+#X connect 47 0 46 0;
 #X coords 0 -1 1 1 175 100 2 100 100;

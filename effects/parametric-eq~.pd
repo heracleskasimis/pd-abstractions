@@ -1,4 +1,4 @@
-#N canvas 575 442 638 615 10;
+#N canvas 608 308 639 616 10;
 #X obj 102 175 inlet~;
 #X obj 102 330 outlet~;
 #X obj 102 295 para_bp2~ 1440 2 0 200;
@@ -19,9 +19,9 @@ empty 0 -6 0 10 -262144 -1 -1;
 #X obj 166 223 r \$0-q-s;
 #X obj 198 246 r \$0-db-s;
 #X obj 231 268 r \$0-ms-s;
-#X obj 364 201 canvasargs;
-#X obj 364 176 argspack \$0-hz \$1 \$0-q \$2 \$0-db \$3 \$0-ms \$4
-;
+#X obj 364 207 canvasargs;
+#X obj 364 182 msgpack \$0-hz \$1 \$0-q \$2 \$0-db \$3 \$0-ms \$4;
+#X obj 364 156 loadbang;
 #X connect 0 0 2 0;
 #X connect 2 0 1 0;
 #X connect 7 0 8 0;
@@ -31,4 +31,5 @@ empty 0 -6 0 10 -262144 -1 -1;
 #X connect 12 0 2 3;
 #X connect 13 0 2 4;
 #X connect 15 0 14 0;
+#X connect 16 0 15 0;
 #X coords 0 -1 1 1 360 24 2 100 116;

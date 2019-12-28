@@ -1,4 +1,4 @@
-#N canvas 320 222 1330 794 10;
+#N canvas 318 206 1330 795 10;
 #X obj 106 308 mtof~;
 #X obj 106 286 +~;
 #X obj 185 269 *~ 127;
@@ -13,7 +13,7 @@
 #X obj 898 218 / 127;
 #X obj 883 309 *~ 2000;
 #X obj 106 330 +~;
-#X obj 109 131 hsl 128 15 0 127 0 1 \$0-trisaw-pitch-s \$0-trisaw-pitch-r
+#X obj 109 131 hsl 128 15 0 127 0 0 \$0-trisaw-pitch-s \$0-trisaw-pitch-r
 PITCH 135 7 0 10 -262144 -1 -1 0 1;
 #X floatatom 207 117 5 0 0 0 - - -, f 5;
 #X obj 106 506 *~;
@@ -57,10 +57,10 @@ PITCH 135 7 0 10 -262144 -1 -1 0 1;
 #X obj 262 109 cnv 5 5 5 empty empty FM 0 0 0 8 -262144 -120682 0;
 #X obj 105 123 cnv 5 5 5 empty empty TRIGONS 0 0 0 12 -262144 -66577
 0;
-#X obj 109 146 hsl 128 15 0 127 0 1 \$0-trisaw-xfade-s \$0-trisaw-xfade-r
+#X obj 109 146 hsl 128 15 0 127 0 0 \$0-trisaw-xfade-s \$0-trisaw-xfade-r
 WAVE 135 7 0 10 -262144 -1 -1 0 1;
 #X obj 295 282 r \$0-trisaw-xfade-s;
-#X obj 109 161 hsl 128 15 0 127 0 1 \$0-trisaw-harmonics-s \$0-trisaw-harmonics-r
+#X obj 109 161 hsl 128 15 0 127 0 0 \$0-trisaw-harmonics-s \$0-trisaw-harmonics-r
 HARM. 135 7 0 10 -262144 -1 -1 0 1;
 #X obj 356 513 r \$0-trisaw-harmonics-s;
 #X obj 640 725 outlet~;
@@ -69,7 +69,7 @@ HARM. 135 7 0 10 -262144 -1 -1 0 1;
 ;
 #X obj 155 109 cnv 5 5 5 empty empty WAVE 0 0 0 8 -262144 -66577 0
 ;
-#X obj 109 177 hsl 128 15 0 127 0 1 \$0-trisaw-fm-att-s \$0-trisaw-fm-att-r
+#X obj 109 177 hsl 128 15 0 127 0 0 \$0-trisaw-fm-att-s \$0-trisaw-fm-att-r
 FM 133 7 0 10 -216373 -1 -1 0 1;
 #X obj 898 181 r \$0-trisaw-fm-att-s;
 #X obj 744 503 loadbang;
@@ -268,9 +268,10 @@ FM 133 7 0 10 -216373 -1 -1 0 1;
 #X obj 544 523 +~;
 #X obj 544 545 clip~ 0 2;
 #X obj 640 672 *~;
-#X obj 318 91 canvasargs;
-#X obj 318 53 argspack \$0-trisaw-pitch \$1 \$0-trisaw-xfade \$2 \$0-trisaw-harmonics
+#X obj 318 119 canvasargs;
+#X obj 318 81 msgpack \$0-trisaw-pitch \$1 \$0-trisaw-xfade \$2 \$0-trisaw-harmonics
 \$3 \$0-trisaw-fm-att \$4;
+#X obj 318 54 loadbang;
 #X connect 0 0 13 0;
 #X connect 1 0 0 0;
 #X connect 2 0 1 1;
@@ -356,4 +357,5 @@ FM 133 7 0 10 -216373 -1 -1 0 1;
 #X connect 90 0 91 1;
 #X connect 91 0 51 0;
 #X connect 93 0 92 0;
+#X connect 94 0 93 0;
 #X coords 0 -1 1 1 175 100 2 100 100;

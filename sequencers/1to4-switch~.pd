@@ -1,8 +1,8 @@
-#N canvas 361 275 1127 651 10;
+#N canvas 361 359 1127 651 10;
 #X obj 261 98 inlet~;
 #X obj 881 94 inlet~;
-#X obj 107 143 hradio 15 1 1 4 \$0-1to4-select-s \$0-1to4-select-r
-empty 0 -8 0 10 -262144 -226533 -1 3;
+#X obj 107 143 hradio 15 0 0 4 \$0-1to4-select-s \$0-1to4-select-r
+empty 0 -8 0 10 -262144 -226533 -1 0;
 #X obj 105 111 cnv 5 5 5 empty empty IN 0 0 0 8 -262144 -66577 0;
 #X obj 229 109 cnv 5 5 5 empty empty TRIG 0 0 0 8 -262144 -226533 0
 ;
@@ -52,17 +52,18 @@ empty 0 -8 0 10 -262144 -226533 -1 3;
 #X obj 572 144 sel 2;
 #X obj 699 143 sel 3;
 #X obj 880 116 threshold~ 0.9 0 0.9 0;
-#X obj 191 143 hradio 15 1 1 3 \$0-1to4-steps-s \$0-1to4-steps-r STEPS
+#X obj 191 143 hradio 15 0 0 3 \$0-1to4-steps-s \$0-1to4-steps-r STEPS
 0 -8 0 10 -262144 -226533 -1 2;
 #X obj 195 165 cnv 5 5 5 empty empty 2 0 0 0 8 -262144 -66577 0;
 #X obj 212 165 cnv 5 5 5 empty empty 3 0 0 0 8 -262144 -66577 0;
 #X obj 227 165 cnv 5 5 5 empty empty 4 0 0 0 8 -262144 -66577 0;
 #X obj 938 252 + 2;
 #X obj 938 230 r \$0-1to4-steps-s;
-#X obj 100 192 argspack \$0-1to4-steps \$1;
-#X obj 100 217 canvasargs;
+#X obj 100 209 msgpack \$0-1to4-steps \$1;
+#X obj 100 234 canvasargs;
 #X obj 896 172 r \$0-1to4-select-s;
 #X obj 896 197 + 1;
+#X obj 100 183 loadbang;
 #X connect 0 0 11 0;
 #X connect 0 0 24 0;
 #X connect 0 0 31 0;
@@ -110,4 +111,5 @@ empty 0 -8 0 10 -262144 -226533 -1 3;
 #X connect 55 0 56 0;
 #X connect 57 0 58 0;
 #X connect 58 0 15 1;
+#X connect 59 0 55 0;
 #X coords 0 -1 1 1 150 75 2 100 100;

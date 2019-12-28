@@ -1,7 +1,7 @@
-#N canvas 336 130 1293 908 10;
+#N canvas 334 108 1294 908 10;
 #X obj 787 552 line~;
 #X obj 734 347 pack 0 50;
-#X obj 109 176 hsl 128 15 0 127 0 1 \$0-megaverb-dry/wet-s \$0-megaverb-dry/wet-r
+#X obj 109 176 hsl 128 15 0 127 0 0 \$0-megaverb-dry/wet-s \$0-megaverb-dry/wet-r
 DRY/WET 135 7 0 10 -262144 -1 -1 0 1;
 #X obj 787 457 r \$0-megaverb-dry/wet-s;
 #X obj 787 479 / 127;
@@ -14,12 +14,12 @@ DRY/WET 135 7 0 10 -262144 -1 -1 0 1;
 #X obj 1005 602 / 127;
 #X obj 1005 624 pack 0 50;
 #X obj 1005 646 line~;
-#X obj 109 132 hsl 128 15 0 127 0 1 \$0-megaverb-room-s \$0-megaverb-room-r
+#X obj 109 132 hsl 128 15 0 127 0 0 \$0-megaverb-room-s \$0-megaverb-room-r
 SIZE 135 7 0 10 -262144 -1 -1 0 1;
 #X obj 538 113 r \$0-megaverb-room-s;
 #X obj 538 135 / 127;
 #X obj 734 369 line~;
-#X obj 109 146 hsl 128 15 0 127 0 1 \$0-megaverb-damping-s \$0-megaverb-damping-r
+#X obj 109 146 hsl 128 15 0 127 0 0 \$0-megaverb-damping-s \$0-megaverb-damping-r
 DAMPING 135 7 0 10 -262144 -1 -1 0 1;
 #X obj 735 285 / 127;
 #X obj 735 262 r \$0-megaverb-damping-s;
@@ -128,7 +128,7 @@ DAMPING 135 7 0 10 -262144 -1 -1 0 1;
 #X obj 787 503 * 0.1;
 #X obj 538 188 * 0.25;
 #X obj 538 236 clip 0.25 0.49;
-#X obj 109 161 hsl 128 15 0 127 0 1 \$0-megaverb-lowpass-s \$0-megaverb-lowpass-r
+#X obj 109 161 hsl 128 15 0 127 0 0 \$0-megaverb-lowpass-s \$0-megaverb-lowpass-r
 LOWPASS 133 7 0 10 -262144 -1 -1 0 1;
 #X obj 951 702 / 127;
 #X obj 951 768 + 50;
@@ -339,9 +339,10 @@ LOWPASS 133 7 0 10 -262144 -1 -1 0 1;
 #X obj 951 746 * 9950;
 #X obj 701 809 *~ 1;
 #X obj 770 810 *~ 1;
-#X obj 804 131 canvasargs;
-#X obj 804 87 argspack \$0-megaverb-room \$1 \$0-megaverb-damping \$2
+#X obj 805 156 canvasargs;
+#X obj 805 112 msgpack \$0-megaverb-room \$1 \$0-megaverb-damping \$2
 \$0-megaverb-lowpass \$3 \$0-megaverb-dry/wet \$4;
+#X obj 805 86 loadbang;
 #X connect 0 0 60 0;
 #X connect 1 0 17 0;
 #X connect 3 0 4 0;
@@ -472,4 +473,5 @@ LOWPASS 133 7 0 10 -262144 -1 -1 0 1;
 #X connect 109 0 67 0;
 #X connect 110 0 68 0;
 #X connect 112 0 111 0;
+#X connect 113 0 112 0;
 #X coords 0 -1 1 1 200 100 2 100 100;

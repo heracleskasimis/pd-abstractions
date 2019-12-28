@@ -1,4 +1,4 @@
-#N canvas 317 297 1070 706 10;
+#N canvas 317 325 1070 706 10;
 #X obj 93 296 t f f;
 #X obj 93 384 line~;
 #X obj 93 478 mtof~;
@@ -10,9 +10,9 @@
 #X obj 480 416 pack 0 50;
 #X obj 480 438 line~;
 #X obj 107 177 hsl 128 15 0 127 0 0 \$0-basic-osc-fm-att-s \$0-basic-osc-fm-att-r
-FM 133 7 0 10 -216373 -1 -1 1400 1;
+FM 133 7 0 10 -216373 -1 -1 0 1;
 #X obj 107 132 hsl 128 15 0 127 0 0 \$0-basic-osc-pitch-s \$0-basic-osc-pitch-r
-PITCH 133 7 0 10 -262144 -1 -1 6700 1;
+PITCH 133 7 0 10 -262144 -1 -1 0 1;
 #X obj 105 109 cnv 5 5 5 empty empty PITCH 0 0 0 8 -262144 -66577 0
 ;
 #X obj 192 109 cnv 5 5 5 empty empty PWM 0 0 0 8 -262144 -120682 0
@@ -30,7 +30,7 @@ PITCH 133 7 0 10 -262144 -1 -1 6700 1;
 #X obj 107 147 hsl 128 15 0 127 0 0 \$0-basic-osc-pwidth-s \$0-basic-osc-pwidth-r
 P-WIDTH 133 7 0 10 -262144 -1 -1 0 1;
 #X obj 107 162 hsl 128 15 0 127 0 0 \$0-basic-osc-pwm-att-s \$0-basic-osc-pwm-att-r
-PWM 133 7 0 10 -216373 -1 -1 1500 1;
+PWM 133 7 0 10 -216373 -1 -1 0 1;
 #X obj 480 350 r \$0-basic-osc-fm-att-s;
 #X obj 480 372 * 0.00787402;
 #X obj 480 394 * 2;
@@ -231,7 +231,7 @@ empty 65 7 0 10 -262144 -1 -1 0;
 #X obj 465 308 inlet~ FM;
 #X obj 217 246 inlet~ PITCH;
 #X obj 93 318 clip 0 100;
-#X obj 312 151 canvasargs;
+#X obj 312 175 canvasargs;
 #N canvas 297 27 518 295 parameter-nudging-system 0;
 #N canvas 0 22 484 497 param-nudge 0;
 #X obj 124 234 random;
@@ -397,10 +397,11 @@ empty 65 7 0 10 -262144 -1 -1 0;
 #X connect 13 0 2 0;
 #X connect 14 0 5 0;
 #X connect 15 0 8 0;
-#X restore 314 72 pd parameter-nudging-system;
-#X obj 312 100 argspack \$0-basic-osc-pitch \$1 \$0-basic-osc-pwidth
+#X restore 312 75 pd parameter-nudging-system;
+#X obj 312 124 msgpack \$0-basic-osc-pitch \$1 \$0-basic-osc-pwidth
 \$2 \$0-basic-osc-pwm-att \$3 \$0-basic-osc-fm-att \$4 \$0-basic-osc-wform
 \$5;
+#X obj 312 100 loadbang;
 #X connect 0 0 74 0;
 #X connect 0 1 3 0;
 #X connect 1 0 5 0;
@@ -468,4 +469,5 @@ empty 65 7 0 10 -262144 -1 -1 0;
 #X connect 73 0 6 0;
 #X connect 74 0 19 0;
 #X connect 77 0 75 0;
+#X connect 78 0 77 0;
 #X coords 0 -1 1 1 200 112 2 100 100;

@@ -1,42 +1,42 @@
-#N canvas 493 208 1281 663 10;
+#N canvas 493 264 1281 663 10;
 #X obj 103 127 cnv 5 5 5 empty empty TRIGGER 0 0 0 12 -262144 -66577
 0;
 #X obj 158 127 cnv 5 5 5 empty empty SEQ 0 0 0 12 -262144 -66577 0
 ;
-#X obj 103 154 tgl 15 1 \$0-trigger-seq-s1-s \$0-trigger-seq-s1-r GATE-ON/OFF
+#X obj 103 154 tgl 15 0 \$0-trigger-seq-s1-s \$0-trigger-seq-s1-r GATE-ON/OFF
 0 25 0 10 -191407 -1 -1 0 1;
-#X obj 118 154 tgl 15 1 \$0-trigger-seq-s2-s \$0-trigger-seq-s2-r empty
+#X obj 118 154 tgl 15 0 \$0-trigger-seq-s2-s \$0-trigger-seq-s2-r empty
 17 7 0 10 -262144 -1 -1 1 1;
-#X obj 133 154 tgl 15 1 \$0-trigger-seq-s3-s \$0-trigger-seq-s3-r empty
+#X obj 133 154 tgl 15 0 \$0-trigger-seq-s3-s \$0-trigger-seq-s3-r empty
 17 7 0 10 -262144 -1 -1 0 1;
-#X obj 148 154 tgl 15 1 \$0-trigger-seq-s4-s \$0-trigger-seq-s4-r empty
+#X obj 148 154 tgl 15 0 \$0-trigger-seq-s4-s \$0-trigger-seq-s4-r empty
 17 7 0 10 -262144 -1 -1 1 1;
-#X obj 163 154 tgl 15 1 \$0-trigger-seq-s5-s \$0-trigger-seq-s5-r empty
+#X obj 163 154 tgl 15 0 \$0-trigger-seq-s5-s \$0-trigger-seq-s5-r empty
 4 25 0 10 -191407 -1 -1 0 1;
-#X obj 178 154 tgl 15 1 \$0-trigger-seq-s6-s \$0-trigger-seq-s6-r empty
+#X obj 178 154 tgl 15 0 \$0-trigger-seq-s6-s \$0-trigger-seq-s6-r empty
 17 7 0 10 -262144 -1 -1 0 1;
-#X obj 193 154 tgl 15 1 \$0-trigger-seq-s7-s \$0-trigger-seq-s7-r empty
+#X obj 193 154 tgl 15 0 \$0-trigger-seq-s7-s \$0-trigger-seq-s7-r empty
 17 7 0 10 -262144 -1 -1 0 1;
-#X obj 208 154 tgl 15 1 \$0-trigger-seq-s8-s \$0-trigger-seq-s8-r empty
+#X obj 208 154 tgl 15 0 \$0-trigger-seq-s8-s \$0-trigger-seq-s8-r empty
 17 7 0 10 -262144 -1 -1 0 1;
-#X obj 223 154 tgl 15 1 \$0-trigger-seq-s9-s \$0-trigger-seq-s9-r empty
+#X obj 223 154 tgl 15 0 \$0-trigger-seq-s9-s \$0-trigger-seq-s9-r empty
 4 25 0 10 -191407 -1 -1 1 1;
-#X obj 238 154 tgl 15 1 \$0-trigger-seq-s10-s \$0-trigger-seq-s10-r
+#X obj 238 154 tgl 15 0 \$0-trigger-seq-s10-s \$0-trigger-seq-s10-r
 empty 17 7 0 10 -262144 -1 -1 0 1;
-#X obj 253 154 tgl 15 1 \$0-trigger-seq-s11-s \$0-trigger-seq-s11-r
+#X obj 253 154 tgl 15 0 \$0-trigger-seq-s11-s \$0-trigger-seq-s11-r
 empty 17 7 0 10 -262144 -1 -1 0 1;
-#X obj 268 154 tgl 15 1 \$0-trigger-seq-s12-s \$0-trigger-seq-s12-r
+#X obj 268 154 tgl 15 0 \$0-trigger-seq-s12-s \$0-trigger-seq-s12-r
 empty 17 7 0 10 -262144 -1 -1 0 1;
-#X obj 283 154 tgl 15 1 \$0-trigger-seq-s13-s \$0-trigger-seq-s13-r
+#X obj 283 154 tgl 15 0 \$0-trigger-seq-s13-s \$0-trigger-seq-s13-r
 empty 4 25 0 10 -191407 -1 -1 1 1;
-#X obj 298 154 tgl 15 1 \$0-trigger-seq-s14-s \$0-trigger-seq-s14-r
+#X obj 298 154 tgl 15 0 \$0-trigger-seq-s14-s \$0-trigger-seq-s14-r
 empty 17 7 0 10 -262144 -1 -1 0 1;
-#X obj 313 154 tgl 15 1 \$0-trigger-seq-s15-s \$0-trigger-seq-s15-r
+#X obj 313 154 tgl 15 0 \$0-trigger-seq-s15-s \$0-trigger-seq-s15-r
 empty 17 7 0 10 -262144 -1 -1 1 1;
-#X obj 328 154 tgl 15 1 \$0-trigger-seq-s16-s \$0-trigger-seq-s16-r
+#X obj 328 154 tgl 15 0 \$0-trigger-seq-s16-s \$0-trigger-seq-s16-r
 empty 17 7 0 10 -262144 -1 -1 0 1;
 #X obj 103 139 hradio 15 1 0 16 \$0-trigger-seq-gui-s \$0-trigger-seq-gui-r
-empty 0 -8 0 10 -262144 -226533 -1 0;
+empty 0 -8 0 10 -262144 -226533 -1 14;
 #X obj 448 50 inlet~;
 #X obj 448 136 f;
 #X obj 500 176 + 1;
@@ -81,7 +81,7 @@ empty 0 -8 0 10 -262144 -226533 -1 0;
 #X obj 830 488 r \$0-trigger-seq-s15-s;
 #X obj 860 463 spigot;
 #X obj 893 434 r \$0-trigger-seq-s16-s;
-#X obj 213 188 hradio 8 0 1 16 \$0-trigger-seq-num-of-steps-s \$0-trigger-seq-num-of-steps-r
+#X obj 213 188 hradio 8 0 0 16 \$0-trigger-seq-num-of-steps-s \$0-trigger-seq-num-of-steps-r
 NUMBER-OF-STEPS 0 -8 0 10 -262144 -1 -1 15;
 #X obj 596 69 r \$0-trigger-seq-num-of-steps-s;
 #X obj 596 91 + 1;
@@ -101,14 +101,15 @@ NUMBER-OF-STEPS 0 -8 0 10 -262144 -1 -1 15;
 #X text 825 20 RESET INPUT;
 #X obj 840 439 t b b;
 #X obj 448 72 threshold~ 0.9 0 0.9 0;
-#X obj 828 255 canvasargs;
-#X obj 828 144 argspack \$0-trigger-seq-s1 \$1 \$0-trigger-seq-s2 \$2
+#X obj 882 284 canvasargs;
+#X obj 882 169 msgpack \$0-trigger-seq-s1 \$1 \$0-trigger-seq-s2 \$2
 \$0-trigger-seq-s3 \$3 \$0-trigger-seq-s4 \$4 \$0-trigger-seq-s5 \$5
 \$0-trigger-seq-s6 \$6 \$0-trigger-seq-s7 \$7 \$0-trigger-seq-s8 \$8
 \$0-trigger-seq-s9 \$9 \$0-trigger-seq-s10 \$10 \$0-trigger-seq-s11
 \$11 \$0-trigger-seq-s12 \$12 \$0-trigger-seq-s13 \$13 \$0-trigger-seq-s14
 \$14 \$0-trigger-seq-s15 \$15 \$0-trigger-seq-s16 \$16 \$0-trigger-seq-num-of-steps
 \$17;
+#X obj 882 144 loadbang;
 #X connect 19 0 77 0;
 #X connect 20 0 22 0;
 #X connect 21 0 20 1;
@@ -180,4 +181,5 @@ NUMBER-OF-STEPS 0 -8 0 10 -262144 -1 -1 15;
 #X connect 76 0 61 0;
 #X connect 77 0 20 0;
 #X connect 79 0 78 0;
+#X connect 80 0 79 0;
 #X coords 0 -1 1 1 250 110 2 100 100;

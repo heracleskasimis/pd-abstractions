@@ -1,4 +1,4 @@
-#N canvas 415 250 1090 753 10;
+#N canvas 415 278 1090 753 10;
 #X obj 422 172 unpack f f f;
 #X obj 109 302 / 127;
 #X obj 401 320 / 127;
@@ -82,10 +82,10 @@
 #X connect 24 19 23 0;
 #X connect 25 0 13 0;
 #X restore 422 147 pd formant-frequencies;
-#X obj 105 151 hsl 128 15 0 127 0 1 \$0-formant-q-s \$0-formant-q-r
+#X obj 105 151 hsl 128 15 0 127 0 0 \$0-formant-q-s \$0-formant-q-r
 Q 133 7 0 10 -262144 -1 -1 0 1;
 #X obj 109 279 t f f f;
-#X obj 105 136 hsl 128 15 0 127 0 1 \$0-formant-formants-s \$0-formant-formants-r
+#X obj 105 136 hsl 128 15 0 127 0 0 \$0-formant-formants-s \$0-formant-formants-r
 VOWELS 133 7 0 10 -262144 -1 -1 0 1;
 #X obj 52 457 vcf~ 207 5;
 #X obj 52 501 vcf~ 207 5;
@@ -220,9 +220,9 @@ VOWELS 133 7 0 10 -262144 -1 -1 0 1;
 #X obj 706 204 s \$0-formant-formants-r;
 #X obj 706 64 loadbang;
 #X obj 706 86 delay 300;
-#X obj 686 302 canvasargs;
-#X obj 686 267 argspack \$0-formant-formants \$1 \$0-formant-q \$2
-;
+#X obj 705 306 canvasargs;
+#X obj 705 271 msgpack \$0-formant-formants \$1 \$0-formant-q \$2;
+#X obj 705 240 loadbang;
 #X connect 0 0 27 0;
 #X connect 0 1 28 0;
 #X connect 0 2 29 0;
@@ -293,4 +293,5 @@ VOWELS 133 7 0 10 -262144 -1 -1 0 1;
 #X connect 57 0 58 0;
 #X connect 58 0 55 0;
 #X connect 60 0 59 0;
+#X connect 61 0 60 0;
 #X coords 0 -1 1 1 175 75 2 100 100;

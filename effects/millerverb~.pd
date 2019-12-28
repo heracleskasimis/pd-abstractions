@@ -1,4 +1,4 @@
-#N canvas 495 285 1259 754 10;
+#N canvas 415 194 1259 755 10;
 #X obj 366 24 inlet~;
 #N canvas 170 51 450 300 reverberator-1 0;
 #X obj 134 108 inlet~;
@@ -116,7 +116,7 @@
 #X obj 366 507 *~;
 #X obj 482 507 *~;
 #X obj 450 507 *~;
-#X obj 106 132 hsl 128 15 0 127 0 1 \$0-millerverb-reverb-s \$0-millerverb-reverb-r
+#X obj 106 132 hsl 128 15 0 127 0 0 \$0-millerverb-reverb-s \$0-millerverb-reverb-r
 REVERB 133 7 0 10 -262144 -1 -1 10000 1;
 #X obj 366 645 delwrite~ \$0-loop1 60;
 #X obj 410 622 delwrite~ \$0-loop2 71.9345;
@@ -131,7 +131,7 @@ REVERB 133 7 0 10 -262144 -1 -1 10000 1;
 #X obj 222 434 lop~;
 #X obj 289 404 lop~;
 #X obj 289 434 lop~;
-#X obj 106 147 hsl 128 15 0 127 0 1 \$0-millerverb-lowpass-s \$0-millerverb-lowpass-r
+#X obj 106 147 hsl 128 15 0 127 0 0 \$0-millerverb-lowpass-s \$0-millerverb-lowpass-r
 LOWPASS 133 7 0 10 -262144 -1 -1 10850 1;
 #X obj 132 203 / 127;
 #X obj 132 247 * 4950;
@@ -149,7 +149,7 @@ LOWPASS 133 7 0 10 -262144 -1 -1 10850 1;
 ;
 #X obj 104 206 cnv 5 5 5 empty empty LEFT 0 0 0 8 -262144 -66577 0
 ;
-#X obj 106 161 hsl 128 15 0 127 0 1 \$0-millerverb-drywet-s \$0-millerverb-drywet-r
+#X obj 106 161 hsl 128 15 0 127 0 0 \$0-millerverb-drywet-s \$0-millerverb-drywet-r
 DRY/WET 133 7 0 10 -262144 -1 -1 4200 1;
 #X obj 171 495 *~;
 #X text 135 495 DRY;
@@ -185,7 +185,7 @@ DRY/WET 133 7 0 10 -262144 -1 -1 4200 1;
 #X obj 288 675 clip~ -1 1;
 #X obj 222 713 outlet~;
 #X obj 288 713 outlet~;
-#X obj 106 176 hsl 128 15 0 127 0 1 \$0-millerverb-gain-s \$0-millerverb-gain-r
+#X obj 106 176 hsl 128 15 0 127 0 0 \$0-millerverb-gain-s \$0-millerverb-gain-r
 GAIN 133 7 0 10 -262144 -1 -1 5700 1;
 #X obj 21 515 r \$0-millerverb-gain-s;
 #X obj 21 537 / 127;
@@ -198,8 +198,9 @@ GAIN 133 7 0 10 -262144 -1 -1 5700 1;
 #X obj 586 377 * 0.5;
 #X obj 586 468 min~ 0.452;
 #X obj 809 318 canvasargs;
-#X obj 809 280 argspack \$0-millerverb-reverb \$1 \$0-millerverb-lowpass
+#X obj 809 280 msgpack \$0-millerverb-reverb \$1 \$0-millerverb-lowpass
 \$2 \$0-millerverb-drywet \$3 \$0-millerverb-gain \$4;
+#X obj 809 254 loadbang;
 #X connect 0 0 1 0;
 #X connect 0 0 49 0;
 #X connect 1 0 2 0;
@@ -307,4 +308,5 @@ GAIN 133 7 0 10 -262144 -1 -1 5700 1;
 #X connect 91 0 64 0;
 #X connect 92 0 73 0;
 #X connect 94 0 93 0;
+#X connect 95 0 94 0;
 #X coords 0 -1 1 1 185 115 2 100 100;

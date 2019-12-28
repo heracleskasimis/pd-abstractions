@@ -1,15 +1,15 @@
-#N canvas 352 68 980 743 10;
+#N canvas 352 96 980 743 10;
 #X obj 303 45 inlet~;
 #X obj 302 373 *~;
 #X obj 302 463 clip~ -1 1;
 #X obj 302 662 outlet~;
-#X obj 108 147 hsl 128 15 0 127 0 1 \$0-overdrive-tone-s \$0-overdrive-tone-r
+#X obj 108 147 hsl 128 15 0 127 0 0 \$0-overdrive-tone-s \$0-overdrive-tone-r
 TONE 135 7 0 10 -262144 -1 -1 0 1;
 #X obj 317 305 pack 0 50;
 #X obj 317 327 line~;
 #X obj 317 349 +~;
 #X obj 382 310 inlet~ DRIVE-CV;
-#X obj 108 132 hsl 128 15 0 127 0 1 \$0-overdrive-drive-s \$0-overdrive-drive-r
+#X obj 108 132 hsl 128 15 0 127 0 0 \$0-overdrive-drive-s \$0-overdrive-drive-r
 DRIVE 135 7 0 10 -262144 -1 -1 0 1;
 #X obj 604 243 * 0.00787402;
 #X obj 604 267 * 9900;
@@ -114,7 +114,7 @@ DRIVE 135 7 0 10 -262144 -1 -1 0 1;
 #X connect 3 0 5 0;
 #X connect 4 0 1 0;
 #X connect 6 0 0 0;
-#X restore 34 66 pd parameter-nudging-system;
+#X restore 100 183 pd parameter-nudging-system;
 #X obj 725 56 inlet~ TONE-CV;
 #X obj 725 166 snapshot~;
 #X obj 604 355 +;
@@ -172,9 +172,10 @@ DRIVE 135 7 0 10 -262144 -1 -1 0 1;
 #X obj 317 261 * 499;
 #X obj 382 332 *~ 499;
 #X obj 302 395 +~ 0.1;
-#X obj 33 17 argspack \$0-overdrive-drive \$1 \$0-overdrive-tone \$2
+#X obj 613 28 msgpack \$0-overdrive-drive \$1 \$0-overdrive-tone \$2
 ;
-#X obj 33 42 canvasargs;
+#X obj 613 53 canvasargs;
+#X obj 613 4 loadbang;
 #X connect 0 0 34 0;
 #X connect 1 0 82 0;
 #X connect 2 0 38 0;
@@ -258,4 +259,5 @@ DRIVE 135 7 0 10 -262144 -1 -1 0 1;
 #X connect 81 0 7 1;
 #X connect 82 0 15 0;
 #X connect 83 0 84 0;
+#X connect 85 0 83 0;
 #X coords 0 -1 1 1 175 75 2 100 100;

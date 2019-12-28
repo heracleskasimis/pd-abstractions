@@ -1,4 +1,4 @@
-#N canvas 468 351 984 551 10;
+#N canvas 468 379 984 551 10;
 #X obj 150 149 vsl 15 128 0 127 0 1 \$0-gate-seq-l4-s \$0-gate-seq-l4-r
 empty 0 -9 0 10 -262144 -1 -1 8100 1;
 #X obj 105 149 vsl 15 128 0 127 0 1 \$0-gate-seq-l1-s \$0-gate-seq-l1-r
@@ -784,11 +784,12 @@ RDM! -1 -7 0 8 -262144 -226533 -226533;
 #X connect 47 0 55 0;
 #X restore 43 329 pd parameter-nudging-system;
 #X obj 577 492 canvasargs;
-#X obj 577 381 argspack \$0-gate-seq-l1 \$1 \$0-gate-seq-t1 \$2 \$0-gate-seq-l2
+#X obj 577 396 msgpack \$0-gate-seq-l1 \$1 \$0-gate-seq-t1 \$2 \$0-gate-seq-l2
 \$3 \$0-gate-seq-t2 \$4 \$0-gate-seq-l3 \$5 \$0-gate-seq-t3 \$6 \$0-gate-seq-l4
 \$7 \$0-gate-seq-t4 \$8 \$0-gate-seq-l5 \$9 \$0-gate-seq-t5 \$10 \$0-gate-seq-l6
 \$11 \$0-gate-seq-t6 \$12 \$0-gate-seq-l7 \$13 \$0-gate-seq-t7 \$14
 \$0-gate-seq-l8 \$15 \$0-gate-seq-t8 \$16;
+#X obj 577 368 loadbang;
 #X connect 17 0 18 0;
 #X connect 17 0 19 0;
 #X connect 18 0 17 1;
@@ -830,4 +831,5 @@ RDM! -1 -7 0 8 -262144 -226533 -226533;
 #X connect 53 0 54 0;
 #X connect 54 1 55 0;
 #X connect 59 0 58 0;
+#X connect 60 0 59 0;
 #X coords 0 -1 1 1 130 210 2 100 100;

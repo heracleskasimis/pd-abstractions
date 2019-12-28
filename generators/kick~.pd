@@ -1,12 +1,12 @@
-#N canvas 359 341 1172 649 10;
+#N canvas 359 369 1172 649 10;
 #X obj 108 160 hsl 128 15 1.27 127 1 0 \$0-kick-envmod-s \$0-kick-envmod-r
-EG2 133 7 0 10 -262144 -1 -1 9350 1;
+EG2 133 7 0 10 -262144 -1 -1 0 1;
 #X obj 108 145 hsl 128 15 1.27 127 1 0 \$0-kick-decay-s \$0-kick-decay-r
-DECAY 133 7 0 10 -262144 -1 -1 12700 1;
+DECAY 133 7 0 10 -262144 -1 -1 0 1;
 #X obj 108 175 hsl 128 15 0 127 0 0 \$0-kick-sweep-s \$0-kick-sweep-r
-SWEEP 133 7 0 10 -262144 -1 -1 3250 1;
+SWEEP 133 7 0 10 -262144 -1 -1 0 1;
 #X obj 108 130 hsl 128 15 0 127 0 0 \$0-kick-pitch-s \$0-kick-pitch-r
-PITCH 133 7 0 10 -262144 -1 -1 500 1;
+PITCH 133 7 0 10 -262144 -1 -1 0 1;
 #X obj 377 405 *~;
 #X msg 513 322 1 1 \, 0 \$1 1;
 #X obj 513 344 vline~;
@@ -145,9 +145,10 @@ WFORM 135 7 0 10 -262144 -1 -1 0 1;
 #X obj 998 316 s~ \$0-kick-wform-cv;
 #X obj 196 109 cnv 5 5 5 empty empty EG2 0 0 0 8 -262144 -1 0;
 #X obj 257 49 threshold~ 0.9 0 0.9 0;
-#X obj 794 63 canvasargs;
-#X obj 794 24 argspack \$0-kick-pitch \$1 \$0-kick-decay \$2 \$0-kick-envmod
+#X obj 794 72 canvasargs;
+#X obj 794 33 msgpack \$0-kick-pitch \$1 \$0-kick-decay \$2 \$0-kick-envmod
 \$3 \$0-kick-sweep \$4 \$0-kick-wform \$5;
+#X obj 794 6 loadbang;
 #X connect 4 0 66 0;
 #X connect 5 0 6 0;
 #X connect 6 0 7 0;
@@ -213,4 +214,5 @@ WFORM 135 7 0 10 -262144 -1 -1 0 1;
 #X connect 67 0 68 0;
 #X connect 70 0 38 0;
 #X connect 72 0 71 0;
+#X connect 73 0 72 0;
 #X coords 0 -1 1 1 175 115 2 100 100;

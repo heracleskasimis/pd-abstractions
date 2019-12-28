@@ -1,5 +1,5 @@
-#N canvas 613 220 1102 754 10;
-#X obj 108 131 hsl 128 15 0 127 0 1 \$0-polyfm-pitch-s \$0-polyfm-pitch-r
+#N canvas 613 248 1102 754 10;
+#X obj 108 131 hsl 128 15 0 127 0 0 \$0-polyfm-pitch-s \$0-polyfm-pitch-r
 PITCH 135 7 0 10 -262144 -1 -1 0 1;
 #X obj 320 467 pack f f f;
 #X obj 320 328 f;
@@ -10,13 +10,13 @@ PITCH 135 7 0 10 -262144 -1 -1 0 1;
 #X floatatom 377 417 5 0 0 0 - - -, f 5;
 #X obj 320 443 poly 4 1;
 #X obj 320 492 route 1 2 3 4;
-#X obj 108 161 hsl 128 15 0 127 0 1 \$0-polyfm-ratio-s \$0-polyfm-ratio-r
+#X obj 108 161 hsl 128 15 0 127 0 0 \$0-polyfm-ratio-s \$0-polyfm-ratio-r
 RATIO 135 7 0 10 -262144 -1 -1 0 1;
-#X obj 108 211 hsl 128 15 1.27 127 1 1 \$0-polyfm-attack-s \$0-polyfm-attack-r
+#X obj 108 211 hsl 128 15 1.27 127 1 0 \$0-polyfm-attack-s \$0-polyfm-attack-r
 ATTACK 135 7 0 10 -262144 -1 -1 0 1;
-#X obj 108 226 hsl 128 15 0 127 0 1 \$0-polyfm-hold-s \$0-polyfm-hold-r
+#X obj 108 226 hsl 128 15 0 127 0 0 \$0-polyfm-hold-s \$0-polyfm-hold-r
 HOLD 135 7 0 10 -262144 -1 -1 0 1;
-#X obj 108 240 hsl 128 15 0 127 0 1 \$0-polyfm-release-s \$0-polyfm-release-r
+#X obj 108 240 hsl 128 15 0 127 0 0 \$0-polyfm-release-s \$0-polyfm-release-r
 RELEASE 135 7 0 10 -262144 -1 -1 0 1;
 #X obj 320 371 pack f f;
 #X obj 320 83 threshold~ 0.9 0 0.9 0;
@@ -31,7 +31,7 @@ RELEASE 135 7 0 10 -262144 -1 -1 0 1;
 #X obj 320 632 *~ 0.25;
 #X obj 678 697 outlet~ EG OUT;
 #X obj 678 655 *~ 0.25;
-#X obj 108 146 hsl 128 15 0 127 0 1 \$0-polyfm-index-s \$0-polyfm-index-r
+#X obj 108 146 hsl 128 15 0 127 0 0 \$0-polyfm-index-s \$0-polyfm-index-r
 INDEX 135 7 0 10 -262144 -1 -1 0 1;
 #N canvas 224 22 962 575 voice1-ahr 0;
 #X obj 43 6 inlet;
@@ -577,7 +577,7 @@ INDEX 135 7 0 10 -262144 -1 -1 0 1;
 #X connect 30 0 12 0;
 #X connect 32 0 13 0;
 #X connect 34 0 16 0;
-#X restore 678 496 pd parameter-nudging-system;
+#X restore 677 496 pd parameter-nudging-system;
 #X obj 270 330 cnv 5 5 5 empty empty ENV 0 0 0 8 -262144 -1 0;
 #X obj 104 330 cnv 5 5 5 empty empty LEFT 0 0 0 8 -262144 -1 0;
 #X obj 184 330 cnv 5 5 5 empty empty RIGHT 0 0 0 8 -262144 -1 0;
@@ -586,11 +586,11 @@ INDEX 135 7 0 10 -262144 -1 -1 0 1;
 #X obj 320 707 outlet~ LEFT;
 #X obj 678 633 catch~ \$0-polyfm-eg;
 #X obj 486 200 r \$0-polyfm-pitch-s;
-#X obj 108 274 hsl 128 15 1.27 127 1 1 \$0-polyfm-attack2-s \$0-polyfm-attack2-r
+#X obj 108 274 hsl 128 15 1.27 127 1 0 \$0-polyfm-attack2-s \$0-polyfm-attack2-r
 ATTACK 135 7 0 10 -262144 -1 -1 0 1;
-#X obj 108 289 hsl 128 15 0 127 0 1 \$0-polyfm-hold2-s \$0-polyfm-hold2-r
+#X obj 108 289 hsl 128 15 0 127 0 0 \$0-polyfm-hold2-s \$0-polyfm-hold2-r
 HOLD 135 7 0 10 -262144 -1 -1 0 1;
-#X obj 108 303 hsl 128 15 0 127 0 1 \$0-polyfm-release2-s \$0-polyfm-release2-r
+#X obj 108 303 hsl 128 15 0 127 0 0 \$0-polyfm-release2-s \$0-polyfm-release2-r
 RELEASE 135 7 0 10 -262144 -1 -1 0 1;
 #X obj 128 121 cnv 5 5 5 empty empty polyFM 0 0 0 12 -262144 -66577
 0;
@@ -1109,11 +1109,12 @@ RELEASE 135 7 0 10 -262144 -1 -1 0 1;
 #X obj 678 449 s \$0-polyfm-ratio-gui-r;
 #X obj 185 108 cnv 5 5 5 empty empty PITCH 0 0 0 8 -262144 -66577 0
 ;
-#X obj 677 530 argspack \$0-polyfm-pitch \$1 \$0-polyfm-index \$2 \$0-polyfm-ratio
+#X obj 677 545 msgpack \$0-polyfm-pitch \$1 \$0-polyfm-index \$2 \$0-polyfm-ratio
 \$3 \$0-polyfm-attack \$4 \$0-polyfm-hold \$5 \$0-polyfm-release \$6
 \$0-polyfm-attack2 \$7 \$0-polyfm-hold2 \$8 \$0-polyfm-release2 \$9
 ;
-#X obj 677 594 canvasargs;
+#X obj 677 609 canvasargs;
+#X obj 677 520 loadbang;
 #X connect 0 0 16 0;
 #X connect 1 0 9 0;
 #X connect 2 0 3 0;
@@ -1164,4 +1165,5 @@ RELEASE 135 7 0 10 -262144 -1 -1 0 1;
 #X connect 58 0 59 0;
 #X connect 59 0 60 0;
 #X connect 62 0 63 0;
+#X connect 64 0 62 0;
 #X coords 0 -1 1 1 190 240 2 100 100;

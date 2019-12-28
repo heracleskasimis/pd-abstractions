@@ -1,4 +1,4 @@
-#N canvas 380 325 1057 676 10;
+#N canvas 380 353 1057 676 10;
 #X obj 422 227 *~ 0.5;
 #X obj 761 249 noise~;
 #X obj 761 296 *~;
@@ -11,19 +11,19 @@
 #X obj 437 424 *~;
 #X obj 833 254 vline~;
 #X obj 109 164 hsl 128 15 1.27 127 1 0 \$0-snare-noise-s \$0-snare-noise-r
-NOISE 133 7 0 10 -262144 -1 -1 7500 1;
+NOISE 133 7 0 10 -262144 -1 -1 0 1;
 #X obj 804 93 / 127;
 #X obj 804 170 moses 10;
 #X obj 833 206 f;
 #X msg 833 232 1 1 \, 0 \$1 1;
 #X obj 833 276 *~;
 #X obj 109 149 hsl 128 15 1.27 127 1 0 \$0-snare-decay-s \$0-snare-decay-r
-DECAY 133 7 0 10 -262144 -1 -1 9950 1;
+DECAY 133 7 0 10 -262144 -1 -1 0 1;
 #X obj 497 312 * 500;
 #X obj 804 148 * 500;
 #X obj 761 342 hip~;
 #X obj 109 179 hsl 128 15 0 127 0 0 \$0-snare-color-s \$0-snare-color-r
-COLOR 133 7 0 10 -262144 -1 -1 2650 1;
+COLOR 133 7 0 10 -262144 -1 -1 0 1;
 #X obj 929 229 / 127;
 #X obj 929 306 + 50;
 #X obj 929 284 * 9950;
@@ -81,8 +81,9 @@ PITCH 133 7 0 10 -262144 -1 -1 0 1;
 #X obj 274 32 threshold~ 0.9 0 0.9 0;
 #X obj 422 506 *~ 1;
 #X obj 55 326 canvasargs;
-#X obj 55 286 argspack \$0-snare-pitch \$1 \$0-snare-decay \$2 \$0-snare-noise
+#X obj 55 286 msgpack \$0-snare-pitch \$1 \$0-snare-decay \$2 \$0-snare-noise
 \$3 \$0-snare-color \$4;
+#X obj 55 259 loadbang;
 #X connect 0 0 4 0;
 #X connect 1 0 2 0;
 #X connect 2 0 20 0;
@@ -157,4 +158,5 @@ PITCH 133 7 0 10 -262144 -1 -1 0 1;
 #X connect 73 0 54 0;
 #X connect 74 0 46 0;
 #X connect 76 0 75 0;
+#X connect 77 0 76 0;
 #X coords 0 -1 1 1 175 100 2 100 100;

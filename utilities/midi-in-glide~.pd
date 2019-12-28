@@ -1,4 +1,4 @@
-#N canvas 356 131 959 872 10;
+#N canvas 356 159 959 872 10;
 #X obj 307 418 / 127;
 #X obj 307 561 sig~;
 #X obj 369 131 > 0;
@@ -42,7 +42,7 @@
 #X obj 550 283 sel 0;
 #X msg 550 305 0;
 #X obj 104 146 hsl 100 15 0 1000 0 0 \$0-midi-in-glide-glide-s \$0-midi-in-glide-glide-r
-GLIDE 108 5 0 10 -262144 -1 -1 350 1;
+GLIDE 108 5 0 10 -262144 -1 -1 0 1;
 #X obj 307 492 line;
 #X obj 307 466 pack f f;
 #X obj 352 441 r \$0-midi-in-glide-glide-s;
@@ -52,7 +52,7 @@ GLIDE 108 5 0 10 -262144 -1 -1 350 1;
 #X obj 550 330 t f f;
 #X obj 630 497 pack f f;
 #X obj 630 522 line;
-#X obj 565 27 canvasargs;
+#X obj 85 653 canvasargs;
 #X msg 562 111 0;
 #X obj 229 105 bng 15 250 50 0 \$0-midi-in-glide-reset-s \$0-midi-in-glide-reset-r
 empty 17 7 0 10 -262144 -1 -1;
@@ -72,11 +72,11 @@ empty 17 7 0 10 -262144 -1 -1;
 #X obj 69 519 s \$0-note;
 #X obj 85 391 s \$0-velocity;
 #X obj 105 125 nbx 3 15 1 16 0 0 \$0-midi-in-glide-ch-s \$0-midi-in-glide-ch-r
-CHANNEL 40 5 0 10 -262144 -1 -1 2 256 0;
+CHANNEL 40 5 0 10 -262144 -1 -1 1 256 0;
 #X obj 69 494 spigot;
 #X obj 102 262 s \$0-channel;
 #X obj 101 471 ==;
-#X obj 565 2 argspack \$0-midi-in-glide-glide \$1 \$0-midi-in-glide-ch
+#X obj 85 628 msgpack \$0-midi-in-glide-glide \$1 \$0-midi-in-glide-ch
 \$2;
 #X obj 116 446 r \$0-midi-in-glide-ch-s;
 #X obj 101 426 r \$0-channel;
@@ -84,6 +84,7 @@ CHANNEL 40 5 0 10 -262144 -1 -1 2 256 0;
 #X obj 117 341 ==;
 #X obj 132 316 r \$0-midi-in-glide-ch-s;
 #X obj 117 296 r \$0-channel;
+#X obj 85 603 loadbang;
 #X connect 0 0 40 0;
 #X connect 1 0 7 0;
 #X connect 2 0 27 0;
@@ -148,4 +149,5 @@ CHANNEL 40 5 0 10 -262144 -1 -1 2 256 0;
 #X connect 73 0 72 1;
 #X connect 74 0 73 1;
 #X connect 75 0 73 0;
+#X connect 76 0 69 0;
 #X coords 0 -1 1 1 149 100 2 100 100;

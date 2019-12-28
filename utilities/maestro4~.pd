@@ -1,33 +1,33 @@
-#N canvas 484 153 1406 763 10;
-#X obj 104 238 hsl 30 15 0 127 0 1 \$0-maestro4-pan1-s \$0-maestro4-pan1-r
+#N canvas 484 265 1406 763 10;
+#X obj 104 238 hsl 30 15 0 127 0 0 \$0-maestro4-pan1-s \$0-maestro4-pan1-r
 PAN1 0 25 0 10 -262144 -1 -1 1400 1;
-#X obj 104 155 vsl 17 80 1.27 127 1 1 \$0-maestro4-ch1-s \$0-maestro4-ch1-r
-CH1 -1 -9 0 10 -262144 -1 -1 1350 1;
+#X obj 104 155 vsl 17 80 1.27 127 1 0 \$0-maestro4-ch1-s \$0-maestro4-ch1-r
+CH1 -1 -9 0 10 -262144 -1 -1 1750 1;
 #X obj 122 155 vu 15 80 \$0-maestro4-ch1-meter-r empty -1 -8 0 10 -262144
 -1 0 0;
-#X obj 149 238 hsl 30 15 0 127 0 1 \$0-maestro4-pan2-s \$0-maestro4-pan2-r
+#X obj 149 238 hsl 30 15 0 127 0 0 \$0-maestro4-pan2-s \$0-maestro4-pan2-r
 PAN2 0 25 0 10 -262144 -1 -1 1300 1;
-#X obj 149 155 vsl 17 80 1.27 127 1 1 \$0-maestro4-ch2-s \$0-maestro4-ch2-r
-CH2 -1 -9 0 10 -262144 -1 -1 6050 1;
+#X obj 149 155 vsl 17 80 1.27 127 1 0 \$0-maestro4-ch2-s \$0-maestro4-ch2-r
+CH2 -1 -9 0 10 -262144 -1 -1 5650 1;
 #X obj 167 155 vu 15 80 \$0-maestro4-ch2-meter-r empty -1 -8 0 10 -262144
 -1 0 0;
-#X obj 194 238 hsl 30 15 0 127 0 1 \$0-maestro4-pan3-s \$0-maestro4-pan3-r
+#X obj 194 238 hsl 30 15 0 127 0 0 \$0-maestro4-pan3-s \$0-maestro4-pan3-r
 PAN3 0 25 0 10 -262144 -1 -1 0 1;
-#X obj 194 155 vsl 17 80 1.27 127 1 1 \$0-maestro4-ch3-s \$0-maestro4-ch3-r
-CH3 -1 -9 0 10 -262144 -1 -1 0 1;
+#X obj 194 155 vsl 17 80 1.27 127 1 0 \$0-maestro4-ch3-s \$0-maestro4-ch3-r
+CH3 -1 -9 0 10 -262144 -1 -1 2200 1;
 #X obj 212 155 vu 15 80 \$0-maestro4-ch3-meter-r empty -1 -8 0 10 -262144
 -1 0 0;
-#X obj 239 238 hsl 30 15 0 127 0 1 \$0-maestro4-pan4-s \$0-maestro4-pan4-r
+#X obj 239 238 hsl 30 15 0 127 0 0 \$0-maestro4-pan4-s \$0-maestro4-pan4-r
 PAN4 0 25 0 10 -262144 -1 -1 0 1;
-#X obj 239 155 vsl 17 80 1.27 127 1 1 \$0-maestro4-ch4-s \$0-maestro4-ch4-r
-CH4 -1 -9 0 10 -262144 -1 -1 0 1;
+#X obj 239 155 vsl 17 80 1.27 127 1 0 \$0-maestro4-ch4-s \$0-maestro4-ch4-r
+CH4 -1 -9 0 10 -262144 -1 -1 3800 1;
 #X obj 257 155 vu 15 80 \$0-maestro4-ch4-meter-r empty -1 -8 0 10 -262144
 -1 0 0;
 #X obj 309 155 vu 15 80 \$0-maestro4-meter-left-r empty -1 -8 0 10
 -262144 -1 0 0;
 #X obj 327 155 vu 15 80 \$0-maestro4-meter-right-r empty -1 -8 0 10
 -262144 -1 0 0;
-#X obj 277 155 vsl 30 79 1.27 127 1 1 \$0-maestro4-master-s \$0-maestro4-master-r
+#X obj 277 155 vsl 30 79 1.27 127 1 0 \$0-maestro4-master-s \$0-maestro4-master-r
 MASTER 0 -8 0 10 -262144 -1 -1 7800 1;
 #X obj 104 131 cnv 5 5 5 empty empty MAESTRO4 0 0 0 12 -262144 -66577
 0;
@@ -198,11 +198,12 @@ MASTER 0 -8 0 10 -262144 -1 -1 7800 1;
 #X obj 145 278 cnv 5 5 5 empty empty CH2 0 0 0 8 -262144 -66577 0;
 #X obj 193 278 cnv 5 5 5 empty empty CH3 0 0 0 8 -262144 -66577 0;
 #X obj 242 278 cnv 5 5 5 empty empty CH4 0 0 0 8 -262144 -66577 0;
-#X obj 1009 569 canvasargs;
-#X obj 1009 505 argspack \$0-maestro4-ch1 \$1 \$0-maestro4-pan1 \$2
+#X obj 1009 593 canvasargs;
+#X obj 1009 529 msgpack \$0-maestro4-ch1 \$1 \$0-maestro4-pan1 \$2
 \$0-maestro4-ch2 \$3 \$0-maestro4-pan2 \$4 \$0-maestro4-ch3 \$5 \$0-maestro4-pan3
 \$6 \$0-maestro4-ch4 \$7 \$0-maestro4-pan4 \$8 \$0-maestro4-master
 \$9;
+#X obj 1009 504 loadbang;
 #X connect 19 0 36 0;
 #X connect 20 0 32 0;
 #X connect 21 0 33 0;
@@ -354,4 +355,5 @@ MASTER 0 -8 0 10 -262144 -1 -1 7800 1;
 #X connect 165 0 23 0;
 #X connect 166 0 44 0;
 #X connect 178 0 177 0;
+#X connect 179 0 178 0;
 #X coords 0 -1 1 1 250 185 2 100 100;

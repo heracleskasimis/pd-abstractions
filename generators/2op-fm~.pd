@@ -1,4 +1,4 @@
-#N canvas 372 279 1176 639 10;
+#N canvas 372 307 1176 639 10;
 #X obj 355 306 phasor~;
 #X obj 355 532 +~;
 #X obj 355 554 cos~;
@@ -19,11 +19,11 @@
 #X obj 801 219 *~ 8;
 #X obj 597 480 +~;
 #X obj 908 460 lop~ 100;
-#X obj 108 165 hsl 128 15 0 127 0 1 \$0-2op-index-s \$0-2op-index-r
+#X obj 108 165 hsl 128 15 0 127 0 0 \$0-2op-index-s \$0-2op-index-r
 INDEX 135 7 0 10 -262144 -1 -1 0 1;
-#X obj 108 135 hsl 128 15 0 127 0 1 \$0-2op-carrier-s \$0-2op-carrier-r
+#X obj 108 135 hsl 128 15 0 127 0 0 \$0-2op-carrier-s \$0-2op-carrier-r
 CARRIER 135 7 0 10 -262144 -1 -1 0 1;
-#X obj 108 150 hsl 128 15 0 127 0 1 \$0-2op-ratio-s \$0-2op-ratio-r
+#X obj 108 150 hsl 128 15 0 127 0 0 \$0-2op-ratio-s \$0-2op-ratio-r
 RATIO 135 7 0 10 -262144 -1 -1 0 1;
 #X obj 597 386 r \$0-2op-index-s;
 #X obj 597 410 * 0.00787402;
@@ -39,7 +39,7 @@ RATIO 135 7 0 10 -262144 -1 -1 0 1;
 #X obj 355 209 mtof~;
 #X obj 469 113 inlet~ CARRIER;
 #X floatatom 206 121 5 0 0 0 - #0-2op-carrier-s s, f 5;
-#X obj 108 196 hsl 128 15 0 127 0 1 \$0-2op-cv2-index-s \$0-2op-cv2-index-r
+#X obj 108 196 hsl 128 15 0 127 0 0 \$0-2op-cv2-index-s \$0-2op-cv2-index-r
 CV2(INDEX) 135 7 0 10 -245500 -1 -1 0 1;
 #X floatatom 105 211 5 0 0 0 - - s, f 5;
 #X obj 1032 209 * 0.00787402;
@@ -52,7 +52,7 @@ CV2(INDEX) 135 7 0 10 -245500 -1 -1 0 1;
 #X obj 911 64 * 0.00787402;
 #X obj 911 87 pack 0 50;
 #X obj 911 109 line~;
-#X obj 108 180 hsl 128 15 0 127 0 1 \$0-2op-cv1-ratio-s \$0-2op-cv1-ratio-r
+#X obj 108 180 hsl 128 15 0 127 0 0 \$0-2op-cv1-ratio-s \$0-2op-cv1-ratio-r
 CV1(RATIO) 135 7 0 10 -216373 -1 -1 0 1;
 #X obj 911 42 r \$0-2op-cv1-ratio-s;
 #X obj 801 126 *~;
@@ -278,9 +278,10 @@ CV1(RATIO) 135 7 0 10 -216373 -1 -1 0 1;
 #X obj 597 164 t f f;
 #X obj 662 150 s \$0-ratio-gui-r;
 #X obj 469 135 *~ 127;
-#X obj 101 31 argspack \$0-2op-carrier \$1 \$0-2op-ratio \$2 \$0-2op-index
+#X obj 101 31 msgpack \$0-2op-carrier \$1 \$0-2op-ratio \$2 \$0-2op-index
 \$3 \$0-2op-cv1-ratio \$4 \$0-2op-cv2-index \$5;
 #X obj 101 69 canvasargs;
+#X obj 101 7 loadbang;
 #X connect 0 0 1 0;
 #X connect 1 0 2 0;
 #X connect 2 0 3 0;
@@ -330,4 +331,5 @@ CV1(RATIO) 135 7 0 10 -216373 -1 -1 0 1;
 #X connect 59 1 60 0;
 #X connect 61 0 33 1;
 #X connect 62 0 63 0;
+#X connect 64 0 62 0;
 #X coords 0 -1 1 1 210 130 2 100 100;

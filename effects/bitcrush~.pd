@@ -1,4 +1,4 @@
-#N canvas 441 202 782 741 10;
+#N canvas 441 230 782 741 10;
 #X obj 191 461 lop~ 2000;
 #X obj 191 487 lop~ 2000;
 #X obj 191 514 samphold~;
@@ -21,7 +21,7 @@
 #X obj 191 558 lop~ 2000;
 #X obj 191 666 outlet~;
 #X obj 98 550 *~;
-#X obj 107 136 hsl 128 15 0 127 0 1 \$0-bitcrush-dry-s \$0-bitcrush-dry-r
+#X obj 107 136 hsl 128 15 0 127 0 0 \$0-bitcrush-dry-s \$0-bitcrush-dry-r
 DRY 133 7 0 10 -262144 -1 -1 6700 1;
 #X obj 113 260 / 127;
 #X obj 113 282 pack 0 50;
@@ -39,7 +39,7 @@ DRY 133 7 0 10 -262144 -1 -1 6700 1;
 #X text 534 221 DRY CV IN;
 #X obj 104 129 cnv 5 5 5 empty empty BITCRUSH 0 0 0 12 -262144 -66577
 0;
-#X obj 107 151 hsl 128 15 0 127 0 1 \$0-bitcrush-crush-s \$0-bitcrush-crush-r
+#X obj 107 151 hsl 128 15 0 127 0 0 \$0-bitcrush-crush-s \$0-bitcrush-crush-r
 CRUSH 133 7 0 10 -262144 -1 -1 4100 1;
 #N canvas 297 27 518 295 parameter-nudging-system 0;
 #N canvas 0 22 484 497 param-nudge 0;
@@ -126,10 +126,11 @@ CRUSH 133 7 0 10 -262144 -1 -1 4100 1;
 #X connect 3 0 7 0;
 #X connect 4 0 0 0;
 #X connect 6 0 1 0;
-#X restore 386 100 pd parameter-nudging-system;
+#X restore 386 72 pd parameter-nudging-system;
 #X obj 386 148 canvasargs;
-#X obj 386 124 argspack \$0-bitcrush-dry \$1 \$0-bitcrush-crush \$2
+#X obj 386 124 msgpack \$0-bitcrush-dry \$1 \$0-bitcrush-crush \$2
 ;
+#X obj 386 99 loadbang;
 #X connect 0 0 1 0;
 #X connect 1 0 2 0;
 #X connect 2 0 18 0;
@@ -162,4 +163,5 @@ CRUSH 133 7 0 10 -262144 -1 -1 4100 1;
 #X connect 31 0 21 1;
 #X connect 37 0 27 0;
 #X connect 40 0 39 0;
+#X connect 41 0 40 0;
 #X coords 0 -1 1 1 175 75 2 100 100;

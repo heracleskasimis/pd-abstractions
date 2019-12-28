@@ -1,4 +1,4 @@
-#N canvas 446 285 1028 571 10;
+#N canvas 446 313 1028 571 10;
 #X obj 335 31 inlet~;
 #X obj 335 203 timer;
 #X obj 272 317 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
@@ -86,11 +86,12 @@ empty 0 -8 0 10 -262144 -226533 -1 0;
 #X connect 0 0 1 0;
 #X connect 1 0 3 0;
 #X connect 2 0 0 0;
-#X restore 638 19 pd parameter-nudging-system;
+#X restore 638 18 pd parameter-nudging-system;
 #X obj 335 53 threshold~ 0.9 0 0.9 0;
-#X obj 638 49 argspack \$0-clock-multiply-multiply \$1 \$0-clock-multiply-x
+#X obj 638 63 msgpack \$0-clock-multiply-multiply \$1 \$0-clock-multiply-x
 \$2;
 #X obj 638 87 canvasargs;
+#X obj 638 40 loadbang;
 #X connect 0 0 38 0;
 #X connect 1 0 4 0;
 #X connect 2 0 3 0;
@@ -129,4 +130,5 @@ empty 0 -8 0 10 -262144 -226533 -1 0;
 #X connect 36 0 21 0;
 #X connect 38 0 18 0;
 #X connect 39 0 40 0;
+#X connect 41 0 39 0;
 #X coords 0 -1 1 1 175 100 2 100 100;

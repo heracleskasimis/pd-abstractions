@@ -1,9 +1,9 @@
-#N canvas 432 260 1056 733 10;
+#N canvas 432 288 1056 733 10;
 #X obj 332 98 inlet~;
 #X obj 332 403 *~;
 #X obj 332 425 cos~;
 #X obj 332 471 outlet~;
-#X obj 107 146 hsl 128 15 0 127 0 1 \$0-wavefold-cv-att-s \$0-wavefold-cv-att-r
+#X obj 107 146 hsl 128 15 0 127 0 0 \$0-wavefold-cv-att-s \$0-wavefold-cv-att-r
 CV 133 7 0 10 -216373 -262144 -1 0 1;
 #X obj 103 122 cnv 5 5 5 empty empty WAVEFOLD 0 0 0 12 -262144 -66577
 0;
@@ -17,7 +17,7 @@ CV 133 7 0 10 -216373 -262144 -1 0 1;
 #X text 457 52 FOLD CV IN;
 #X obj 461 174 *~;
 #X obj 347 369 +~;
-#X obj 107 131 hsl 128 15 0 127 0 1 \$0-wavefold-fold-s \$0-wavefold-fold-r
+#X obj 107 131 hsl 128 15 0 127 0 0 \$0-wavefold-fold-s \$0-wavefold-fold-r
 FOLD 133 7 0 10 -262144 -1 -1 0 1;
 #X obj 512 103 / 127;
 #X obj 512 125 pack 0 50;
@@ -119,9 +119,10 @@ STAGES 50 8 0 10 -262144 -1 -1 0;
 #X msg 214 235 127;
 #X msg 231 257 64;
 #X msg 248 280 8;
-#X obj 629 121 canvasargs;
-#X obj 629 86 argspack \$0-wavefold-fold \$1 \$0-wavefold-cv-att \$2
+#X obj 630 141 canvasargs;
+#X obj 630 106 msgpack \$0-wavefold-fold \$1 \$0-wavefold-cv-att \$2
 \$0-wavefold-stages \$3;
+#X obj 630 82 loadbang;
 #X connect 0 0 1 0;
 #X connect 1 0 2 0;
 #X connect 2 0 3 0;
@@ -151,4 +152,5 @@ STAGES 50 8 0 10 -262144 -1 -1 0;
 #X connect 28 0 23 0;
 #X connect 29 0 23 0;
 #X connect 31 0 30 0;
+#X connect 32 0 31 0;
 #X coords 0 -1 1 1 175 90 2 100 100;

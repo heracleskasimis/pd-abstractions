@@ -1,7 +1,7 @@
-#N canvas 453 325 1014 547 10;
+#N canvas 453 381 1014 547 10;
 #X obj 310 179 inlet~;
 #X obj 311 338 hip~;
-#X obj 106 128 hsl 128 15 0 127 0 1 \$0-highpass-freq-s \$0-highpass-freq-r
+#X obj 106 128 hsl 128 15 0 127 0 0 \$0-highpass-freq-s \$0-highpass-freq-r
 FREQ 133 7 0 10 -262144 -1 -1 0 1;
 #X obj 129 210 / 127;
 #X obj 129 278 pack 0 50;
@@ -12,7 +12,7 @@ FREQ 133 7 0 10 -262144 -1 -1 0 1;
 #X obj 129 232 * 9950;
 #X obj 103 109 cnv 5 5 5 empty empty IN 0 0 0 8 -262144 -66577 0;
 #X obj 529 130 inlet~;
-#X obj 106 143 hsl 128 15 0 127 0 1 \$0-highpass-fm-/+-s \$0-highpass-fm-/+-r
+#X obj 106 143 hsl 128 15 0 127 0 0 \$0-highpass-fm-/+-s \$0-highpass-fm-/+-r
 FM-/+ 133 7 0 10 -245500 -1 -1 0 1;
 #X obj 597 71 / 127;
 #X obj 597 93 * 2;
@@ -123,8 +123,9 @@ FM-/+ 133 7 0 10 -245500 -1 -1 0 1;
 #X connect 6 0 1 0;
 #X restore 103 65 pd parameter-nudging-system;
 #X obj 485 325 canvasargs;
-#X obj 485 294 argspack \$0-highpass-freq \$1 \$0-highpass-fm-/+ \$2
+#X obj 485 294 msgpack \$0-highpass-freq \$1 \$0-highpass-fm-/+ \$2
 ;
+#X obj 485 264 loadbang;
 #X connect 0 0 1 0;
 #X connect 1 0 31 0;
 #X connect 2 0 3 0;
@@ -153,4 +154,5 @@ FM-/+ 133 7 0 10 -245500 -1 -1 0 1;
 #X connect 30 0 1 1;
 #X connect 31 0 6 0;
 #X connect 34 0 33 0;
+#X connect 35 0 34 0;
 #X coords 0 -1 1 1 175 80 2 100 100;

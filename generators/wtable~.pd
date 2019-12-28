@@ -1,4 +1,4 @@
-#N canvas 407 192 1252 741 10;
+#N canvas 407 220 1252 741 10;
 #X obj 104 251 t f f;
 #X obj 104 322 line~;
 #X obj 104 374 mtof~;
@@ -7,9 +7,9 @@
 #X obj 351 369 *~;
 #X obj 366 315 pack 0 50;
 #X obj 366 337 line~;
-#X obj 108 192 hsl 128 15 0 127 0 1 \$0-wtable-fm-att-s \$0-wtable-fm-att-r
+#X obj 108 192 hsl 128 15 0 127 0 0 \$0-wtable-fm-att-s \$0-wtable-fm-att-r
 FM 133 7 0 10 -216373 -1 -1 0 1;
-#X obj 108 131 hsl 128 15 0 127 0 1 \$0-wtable-pitch-s \$0-wtable-pitch-r
+#X obj 108 131 hsl 128 15 0 127 0 0 \$0-wtable-pitch-s \$0-wtable-pitch-r
 PITCH 133 7 0 10 -262144 -1 -1 0 1;
 #X obj 103 108 cnv 5 5 5 empty empty PITCH 0 0 0 8 -262144 -66577 0
 ;
@@ -251,9 +251,9 @@ PITCH 133 7 0 10 -262144 -1 -1 0 1;
 #X connect 10 1 20 0;
 #X restore 26 140 pd z3;
 #X restore 331 78 pd tables;
-#X obj 108 146 hsl 128 15 0 127 0 1 \$0-wtable-x-s \$0-wtable-x-r X
+#X obj 108 146 hsl 128 15 0 127 0 0 \$0-wtable-x-s \$0-wtable-x-r X
 135 7 0 10 -262144 -1 -1 0 1;
-#X obj 108 161 hsl 128 15 0 127 0 1 \$0-wtable-y-s \$0-wtable-y-r Y
+#X obj 108 161 hsl 128 15 0 127 0 0 \$0-wtable-y-s \$0-wtable-y-r Y
 135 7 0 10 -262144 -1 -1 0 1;
 #X obj 1145 352 inlet~ FM IN;
 #X obj 608 123 inlet~ X;
@@ -352,7 +352,7 @@ PITCH 133 7 0 10 -262144 -1 -1 0 1;
 #X connect 19 1 7 0;
 #X connect 19 2 8 0;
 #X restore 238 471 pd pulses;
-#X obj 108 176 hsl 128 15 0 127 0 1 \$0-wtable-z-s \$0-wtable-z-r Z
+#X obj 108 176 hsl 128 15 0 127 0 0 \$0-wtable-z-s \$0-wtable-z-r Z
 135 7 0 10 -262144 -1 -1 0 1;
 #X obj 811 520 *~;
 #X obj 890 520 *~;
@@ -788,9 +788,10 @@ PITCH 133 7 0 10 -262144 -1 -1 0 1;
 #X connect 18 0 8 0;
 #X connect 19 0 10 0;
 #X restore 332 55 pd parameter-nudging-system;
-#X obj 515 55 argspack \$0-wtable-pitch \$1 \$0-wtable-x \$2 \$0-wtable-y
+#X obj 515 55 msgpack \$0-wtable-pitch \$1 \$0-wtable-x \$2 \$0-wtable-y
 \$3 \$0-wtable-z \$4 \$0-wtable-fm-att \$5;
 #X obj 515 93 canvasargs;
+#X obj 515 29 loadbang;
 #X connect 0 0 16 0;
 #X connect 0 1 3 0;
 #X connect 1 0 4 0;
@@ -861,4 +862,5 @@ PITCH 133 7 0 10 -262144 -1 -1 0 1;
 #X connect 76 0 71 0;
 #X connect 77 0 72 0;
 #X connect 79 0 80 0;
+#X connect 81 0 79 0;
 #X coords 0 -1 1 1 175 112 2 100 100;

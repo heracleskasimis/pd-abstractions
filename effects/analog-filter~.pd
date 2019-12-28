@@ -1,11 +1,11 @@
-#N canvas 367 271 1186 711 10;
+#N canvas 367 299 1186 711 10;
 #X obj 379 638 outlet~;
 #X obj 802 626 *~;
 #X obj 788 236 / 127;
 #X obj 817 491 pack 0 50;
 #X obj 817 513 line~;
 #X text 786 198 RESONANCE;
-#X obj 106 164 hsl 128 15 0 127 0 1 \$0-analog-filter-fm-/+-s \$0-analog-filter-fm-/+-r
+#X obj 106 164 hsl 128 15 0 127 0 0 \$0-analog-filter-fm-/+-s \$0-analog-filter-fm-/+-r
 FM-/+ 133 7 0 10 -245500 -1 -1 9600 1;
 #X obj 517 102 / 127;
 #X text 515 57 CUTOFF;
@@ -19,12 +19,12 @@ FM-/+ 133 7 0 10 -245500 -1 -1 9600 1;
 #X obj 313 96 inlet~;
 #X obj 517 77 r \$0-analog-filter-cutoff-s;
 #X text 620 169 "ANALOG" FLUX;
-#X obj 106 134 hsl 128 15 0 127 0 1 \$0-analog-filter-cutoff-s \$0-analog-filter-cutoff-r
+#X obj 106 134 hsl 128 15 0 127 0 0 \$0-analog-filter-cutoff-s \$0-analog-filter-cutoff-r
 CUTOFF 133 7 0 10 -262144 -1 -1 8600 1;
 #X obj 788 213 r \$0-analog-filter-q-s;
 #X text 297 78 SIGNAL IN;
 #X text 725 86 FM CV IN;
-#X obj 106 149 hsl 128 15 0 127 0 1 \$0-analog-filter-q-s \$0-analog-filter-q-r
+#X obj 106 149 hsl 128 15 0 127 0 0 \$0-analog-filter-q-s \$0-analog-filter-q-r
 Q 133 7 0 10 -262144 -1 -1 5800 1;
 #X obj 735 107 inlet~;
 #X obj 735 129 *~ 5000;
@@ -210,8 +210,9 @@ Q 133 7 0 10 -262144 -1 -1 5800 1;
 #X connect 10 0 2 0;
 #X restore 101 232 pd parameter-nudging-system;
 #X obj 830 373 canvasargs;
-#X obj 830 338 argspack \$0-analog-filter-cutoff \$1 \$0-analog-filter-q
+#X obj 830 338 msgpack \$0-analog-filter-cutoff \$1 \$0-analog-filter-q
 \$2 \$0-analog-filter-fm-/+ \$3;
+#X obj 830 312 loadbang;
 #X connect 1 0 9 0;
 #X connect 2 0 33 0;
 #X connect 3 0 4 0;
@@ -277,4 +278,5 @@ Q 133 7 0 10 -262144 -1 -1 5800 1;
 #X connect 73 0 75 0;
 #X connect 75 0 47 0;
 #X connect 78 0 77 0;
+#X connect 79 0 78 0;
 #X coords 0 -1 1 1 175 102 2 100 100;
