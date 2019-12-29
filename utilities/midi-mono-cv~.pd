@@ -1,4 +1,4 @@
-#N canvas 356 159 959 872 10;
+#N canvas 596 183 957 726 10;
 #X obj 307 418 / 127;
 #X obj 307 561 sig~;
 #X obj 369 131 > 0;
@@ -9,20 +9,20 @@
 #X obj 307 583 outlet~ PITCH;
 #X obj 413 547 outlet~ GATE;
 #X obj 630 570 outlet~ VELOCITY;
-#X obj 169 168 cnv 15 15 15 empty \$0-midi-gui-r empty 20 12 0 14 -33289
+#X obj 155 158 cnv 15 15 15 empty \$0-midi-gui-r empty 20 12 0 14 -33289
 -262144 0;
 #X obj 437 351 + 12;
 #X msg 437 373 color \$1;
 #X obj 437 396 s \$0-midi-gui-r;
 #X obj 307 314 t f f;
-#X floatatom 214 168 5 0 0 2 - #0-vel-r -, f 5;
-#X floatatom 104 168 5 0 0 2 - #0-note-r -, f 5;
-#X obj 104 190 cnv 5 5 5 empty empty NOTE 0 0 0 8 -262144 -66577 0
+#X floatatom 188 158 5 0 0 2 - #0-vel-r -, f 5;
+#X floatatom 104 158 5 0 0 2 - #0-note-r -, f 5;
+#X obj 104 180 cnv 5 5 5 empty empty NOTE 0 0 0 8 -262144 -66577 0
 ;
-#X obj 167 190 cnv 5 5 5 empty empty GATE 0 0 0 8 -262144 -66577 0
+#X obj 153 180 cnv 5 5 5 empty empty GATE 0 0 0 8 -262144 -66577 0
 ;
-#X obj 230 190 cnv 5 5 5 empty empty VEL 0 0 0 8 -262144 -1 0;
-#X obj 103 110 cnv 5 5 5 empty empty MIDI-IN-GLIDE 0 0 0 12 -262144
+#X obj 206 180 cnv 5 5 5 empty empty VEL 0 0 0 8 -262144 -1 0;
+#X obj 103 122 cnv 5 5 5 empty empty MIDI-MONO-CV 0 0 0 12 -262144
 -66577 0;
 #X obj 277 187 sel 1;
 #X obj 307 285 f;
@@ -41,50 +41,40 @@
 #X obj 603 162 sel 0;
 #X obj 550 283 sel 0;
 #X msg 550 305 0;
-#X obj 104 146 hsl 100 15 0 1000 0 0 \$0-midi-in-glide-glide-s \$0-midi-in-glide-glide-r
-GLIDE 108 5 0 10 -262144 -1 -1 0 1;
+#X obj 104 136 hsl 80 15 0 1000 0 0 \$0-midi-mono-cv-glide-s \$0-midi-mono-cv-glide-r
+GLIDE 88 5 0 10 -262144 -1 -1 0 1;
 #X obj 307 492 line;
 #X obj 307 466 pack f f;
-#X obj 352 441 r \$0-midi-in-glide-glide-s;
-#X obj 550 628 s \$0-midi-in-glide-glide-s;
+#X obj 352 441 r \$0-midi-mono-cv-glide-s;
+#X obj 550 628 s \$0-midi-mono-cv-glide-s;
 #X obj 717 301 bang;
-#X obj 717 326 s \$0-midi-in-glide-glide-r;
+#X obj 717 326 s \$0-midi-mono-cv-glide-r;
 #X obj 550 330 t f f;
 #X obj 630 497 pack f f;
 #X obj 630 522 line;
 #X obj 85 653 canvasargs;
 #X msg 562 111 0;
-#X obj 229 105 bng 15 250 50 0 \$0-midi-in-glide-reset-s \$0-midi-in-glide-reset-r
+#X obj 203 117 bng 15 250 50 0 \$0-midi-mono-cv-reset-s \$0-midi-mono-cv-reset-r
 empty 17 7 0 10 -262144 -1 -1;
 #X msg 740 123 0;
-#X obj 740 148 s \$0-midi-in-glide-glide-s;
-#X obj 740 98 r \$0-midi-in-glide-reset-s;
+#X obj 740 148 s \$0-midi-mono-cv-glide-s;
+#X obj 740 98 r \$0-midi-mono-cv-reset-s;
 #X obj 740 34 loadbang;
-#X obj 740 59 s \$0-midi-in-glide-reset-r;
-#X obj 562 81 r \$0-midi-in-glide-reset-s;
-#X obj 675 466 r \$0-midi-in-glide-glide-s;
+#X obj 740 59 s \$0-midi-mono-cv-reset-r;
+#X obj 562 81 r \$0-midi-mono-cv-reset-s;
+#X obj 675 466 r \$0-midi-mono-cv-glide-s;
 #X obj 604 321 tgl 15 0 empty empty handle\ note-off 17 7 0 8 -262144
 -1 -1 0 1;
 #X obj 577 354 sel 0;
-#X obj 297 14 r \$0-note;
-#X obj 368 43 r \$0-velocity;
-#X obj 69 238 notein;
-#X obj 69 519 s \$0-note;
-#X obj 85 391 s \$0-velocity;
-#X obj 105 125 nbx 3 15 1 16 0 0 \$0-midi-in-glide-ch-s \$0-midi-in-glide-ch-r
-CHANNEL 40 5 0 10 -262144 -1 -1 1 256 0;
-#X obj 69 494 spigot;
-#X obj 102 262 s \$0-channel;
-#X obj 101 471 ==;
-#X obj 85 628 msgpack \$0-midi-in-glide-glide \$1 \$0-midi-in-glide-ch
+#X obj 85 628 msgpack \$0-midi-mono-cv-glide \$1 \$0-midi-mono-cv-ch
 \$2;
-#X obj 116 446 r \$0-midi-in-glide-ch-s;
-#X obj 101 426 r \$0-channel;
-#X obj 85 364 spigot;
-#X obj 117 341 ==;
-#X obj 132 316 r \$0-midi-in-glide-ch-s;
-#X obj 117 296 r \$0-channel;
 #X obj 85 603 loadbang;
+#X obj 297 14 inlet NOTE;
+#X obj 368 43 inlet VELOCITY;
+#X obj 103 106 cnv 5 5 5 empty empty NOTE 0 0 0 8 -262144 -66577 0
+;
+#X obj 180 106 cnv 5 5 5 empty empty VELOCITY 0 0 0 8 -262144 -66577
+0;
 #X connect 0 0 40 0;
 #X connect 1 0 7 0;
 #X connect 2 0 27 0;
@@ -135,19 +125,8 @@ CHANNEL 40 5 0 10 -262144 -1 -1 1 256 0;
 #X connect 57 0 46 1;
 #X connect 58 0 59 1;
 #X connect 59 1 25 0;
-#X connect 60 0 33 0;
-#X connect 61 0 32 1;
-#X connect 62 0 66 0;
-#X connect 62 1 72 0;
-#X connect 62 2 67 0;
-#X connect 66 0 63 0;
-#X connect 68 0 66 1;
-#X connect 69 0 48 0;
-#X connect 70 0 68 1;
-#X connect 71 0 68 0;
-#X connect 72 0 64 0;
-#X connect 73 0 72 1;
-#X connect 74 0 73 1;
-#X connect 75 0 73 0;
-#X connect 76 0 69 0;
-#X coords 0 -1 1 1 149 100 2 100 100;
+#X connect 60 0 48 0;
+#X connect 61 0 60 0;
+#X connect 62 0 33 0;
+#X connect 63 0 32 1;
+#X coords 0 -1 1 1 124 90 2 100 100;
