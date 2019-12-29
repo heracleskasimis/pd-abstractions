@@ -1,6 +1,6 @@
-#N canvas 881 353 623 598 10;
+#N canvas 660 357 624 598 10;
 #X obj 102 268 unpack f f;
-#X obj 249 285 sel 127;
+#X obj 250 285 sel 127, f 11;
 #X obj 102 199 r \$0-key;
 #N canvas 407 205 424 328 keyboard 0;
 #N canvas 665 185 492 356 z-m 0;
@@ -780,7 +780,7 @@
 #X obj 117 322 * 12;
 #X obj 117 297 r \$0-vkbd-oct-s;
 #X obj 104 124 nbx 3 14 0 9 0 0 \$0-vkbd-oct-s \$0-vkbd-oct-r OCT 38
-5 0 10 -262144 -1 -1 3 256 0;
+5 0 10 -262144 -1 -1 5 256 0;
 #X obj 103 107 cnv 5 5 5 empty empty VIRTUAL-KEYBOARD 0 0 0 12 -262144
 -66577 0;
 #X floatatom 207 144 3 0 0 2 - #0-vel-r -, f 3;
@@ -791,10 +791,9 @@
 #X obj 102 375 t f f;
 #X obj 129 396 s \$0-note-r;
 #X obj 169 124 nbx 3 14 0 127 0 0 \$0-vkbd-vel-s \$0-vkbd-vel-r VEL
-38 5 0 10 -262144 -1 -1 127 256 0;
-#X obj 250 310 v \$0-vkbd-vel-s;
-#X obj 250 335 t f f;
-#X obj 277 364 s \$0-vel-r;
+38 5 0 10 -262144 -1 -1 103 256 0;
+#X obj 250 361 t f f;
+#X obj 277 390 s \$0-vel-r;
 #X obj 247 121 loadbang;
 #X obj 247 146 msgpack \$0-vkbd-oct \$1 \$0-vkbd-vel \$2 \$0-vkbd-on/off
 \$3;
@@ -804,26 +803,27 @@
 #X obj 235 490 outlet VELOCITY;
 #X obj 102 426 t f b;
 #X obj 102 492 outlet NOTE;
-#X floatatom 320 253 5 0 0 0 - - -, f 5;
+#X obj 329 284 r \$0-vkbd-vel-s;
+#X obj 250 317 f;
 #X connect 0 0 6 0;
-#X connect 0 1 29 0;
 #X connect 0 1 1 0;
-#X connect 1 0 18 0;
-#X connect 1 1 19 0;
+#X connect 1 0 29 0;
+#X connect 1 1 18 0;
 #X connect 2 0 4 0;
 #X connect 4 0 0 0;
 #X connect 6 0 15 0;
 #X connect 7 0 6 1;
 #X connect 8 0 7 0;
-#X connect 15 0 27 0;
+#X connect 15 0 26 0;
 #X connect 15 1 16 0;
-#X connect 18 0 19 0;
-#X connect 19 0 25 1;
-#X connect 19 1 20 0;
+#X connect 18 0 24 1;
+#X connect 18 1 19 0;
+#X connect 20 0 21 0;
 #X connect 21 0 22 0;
-#X connect 22 0 23 0;
-#X connect 24 0 4 1;
-#X connect 25 0 26 0;
-#X connect 27 0 28 0;
-#X connect 27 1 25 0;
+#X connect 23 0 4 1;
+#X connect 24 0 25 0;
+#X connect 26 0 27 0;
+#X connect 26 1 24 0;
+#X connect 28 0 29 1;
+#X connect 29 0 18 0;
 #X coords 0 -1 1 1 130 74 2 100 100;

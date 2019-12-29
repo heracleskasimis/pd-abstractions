@@ -1,4 +1,4 @@
-#N canvas 447 292 911 623 10;
+#N canvas 447 320 911 623 10;
 #X obj 284 502 / 127;
 #X obj 284 524 sig~;
 #X obj 386 256 > 0;
@@ -9,7 +9,7 @@
 #X obj 284 546 outlet~ PITCH;
 #X obj 386 509 outlet~ GATE;
 #X obj 675 313 outlet~ VELOCITY;
-#X obj 137 135 cnv 15 15 15 empty \$0-midi-gui-r empty 20 12 0 14 -33289
+#X obj 137 135 cnv 15 15 15 empty \$0-midi-gui-r empty 20 12 0 14 -258699
 -262144 0;
 #X obj 405 326 + 12;
 #X msg 405 348 color \$1;
@@ -21,7 +21,7 @@
 ;
 #X obj 135 157 cnv 5 5 5 empty empty GATE 0 0 0 8 -262144 -66577 0
 ;
-#X obj 197 157 cnv 5 5 5 empty empty VEL 0 0 0 8 -262144 -1 0;
+#X obj 201 157 cnv 5 5 5 empty empty VEL 0 0 0 8 -262144 -1 0;
 #X obj 103 122 cnv 5 5 5 empty empty MIDI-CV 0 0 0 12 -262144 -66577
 0;
 #X obj 166 135 cnv 15 15 15 empty \$0-midi-gui-trig-r empty 20 12 0

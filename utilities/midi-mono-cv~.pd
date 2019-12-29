@@ -1,4 +1,4 @@
-#N canvas 596 183 957 726 10;
+#N canvas 853 215 959 749 10;
 #X obj 307 418 / 127;
 #X obj 307 561 sig~;
 #X obj 369 131 > 0;
@@ -17,7 +17,7 @@
 #X obj 307 314 t f f;
 #X floatatom 188 158 5 0 0 2 - #0-vel-r -, f 5;
 #X floatatom 104 158 5 0 0 2 - #0-note-r -, f 5;
-#X obj 104 180 cnv 5 5 5 empty empty NOTE 0 0 0 8 -262144 -66577 0
+#X obj 104 180 cnv 5 5 5 empty empty PITCH 0 0 0 8 -262144 -66577 0
 ;
 #X obj 153 180 cnv 5 5 5 empty empty GATE 0 0 0 8 -262144 -66577 0
 ;

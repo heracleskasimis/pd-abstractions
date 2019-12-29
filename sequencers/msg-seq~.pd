@@ -1,0 +1,73 @@
+#N canvas 873 317 757 523 10;
+#X obj 455 124 inlet LIST;
+#X obj 241 318 list store;
+#X obj 241 221 f 0;
+#X obj 319 229 % 0;
+#X obj 334 171 list length;
+#X obj 286 377 t f b;
+#X msg 241 291 get \$1 1;
+#X obj 310 201 + 1;
+#X obj 241 343 select -;
+#X obj 102 105 cnv 5 5 5 empty empty CLOCK-IN 0 0 0 8 -262144 -226533
+0;
+#X obj 192 104 cnv 5 5 5 empty empty RESET 0 0 0 8 -262144 -226533
+0;
+#X obj 133 122 cnv 5 5 5 empty empty MSG\ SEQ 0 0 0 12 -262144 -66577
+0;
+#X obj 104 113 bng 15 50 50 0 empty \$0-msg-seq-clock-r empty 17 7
+0 10 -262144 -226533 -1;
+#X obj 199 113 bng 15 50 50 0 empty \$0-msg-seq-reset-r empty 17 7
+0 10 -262144 -258113 -1;
+#X obj 152 144 cnv 5 5 5 empty empty TRIG 0 0 0 8 -262144 -226533 0
+;
+#X obj 103 144 cnv 5 5 5 empty empty PITCH 0 0 0 8 -262144 -1 0;
+#X obj 241 39 inlet~ CLOCK;
+#X obj 241 64 threshold~ 0.9 0 0.9 0;
+#X obj 152 106 cnv 5 5 5 empty empty LIST 0 0 0 8 -262144 -149797 0
+;
+#X obj 554 40 threshold~ 0.99 0 1 0;
+#X obj 554 65 t b b;
+#X msg 256 155 0;
+#X obj 286 415 / 127;
+#X obj 286 440 sig~;
+#X obj 286 464 outlet~ PITCH;
+#X obj 412 437 vline~;
+#X obj 412 464 outlet~ TRIG;
+#X obj 554 15 inlet~ RESET;
+#X msg 412 412 1 0 \, 0 1 1;
+#X obj 208 144 cnv 5 5 5 empty empty S1 0 0 0 8 -262144 -226533 0;
+#X obj 542 389 select 0;
+#X obj 241 252 t f f;
+#X msg 542 414 1 0 \, 0 11;
+#X obj 542 439 vline~;
+#X obj 542 464 outlet~ S1;
+#X connect 0 0 1 1;
+#X connect 0 0 4 0;
+#X connect 1 0 8 0;
+#X connect 2 0 7 0;
+#X connect 2 0 31 0;
+#X connect 3 0 2 1;
+#X connect 4 0 3 1;
+#X connect 5 0 22 0;
+#X connect 5 1 28 0;
+#X connect 6 0 1 0;
+#X connect 7 0 3 0;
+#X connect 8 1 5 0;
+#X connect 16 0 17 0;
+#X connect 17 0 12 0;
+#X connect 17 0 2 0;
+#X connect 19 0 20 0;
+#X connect 20 0 13 0;
+#X connect 20 1 21 0;
+#X connect 21 0 2 1;
+#X connect 22 0 23 0;
+#X connect 23 0 24 0;
+#X connect 25 0 26 0;
+#X connect 27 0 19 0;
+#X connect 28 0 25 0;
+#X connect 30 0 32 0;
+#X connect 31 0 6 0;
+#X connect 31 1 30 0;
+#X connect 32 0 33 0;
+#X connect 33 0 34 0;
+#X coords 0 -1 1 1 119 57 2 100 97;
